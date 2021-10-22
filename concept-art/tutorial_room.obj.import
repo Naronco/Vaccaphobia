@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tutorial_room.obj-da2548cf3a4d771cfb492f1630248c17.mesh"
+
+[deps]
+
+files=[ "res://.import/tutorial_room.obj-da2548cf3a4d771cfb492f1630248c17.mesh" ]
+
+source_file="res://concept-art/tutorial_room.obj"
+dest_files=[ "res://.import/tutorial_room.obj-da2548cf3a4d771cfb492f1630248c17.mesh", "res://.import/tutorial_room.obj-da2548cf3a4d771cfb492f1630248c17.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

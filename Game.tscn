@@ -1,6 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="Environment" id=2]
 background_energy = 0.0
@@ -9,44 +10,46 @@ background_energy = 0.0
 radius = 0.3
 height = 1.4
 
-[sub_resource type="CubeMesh" id=1]
-
-[sub_resource type="PlaneMesh" id=3]
+[sub_resource type="PlaneMesh" id=5]
 
 [node name="Spatial" type="Spatial"]
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.689, 0, 0.768314 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02435, 0, 0.768314 )
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( -0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, -10, 10, -10 )
+transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 5.25, 10, 5.25 )
 environment = SubResource( 2 )
 projection = 1
-size = 20.0
+size = 5.0
 
 [node name="Rotation" type="Spatial" parent="Player"]
 transform = Transform( 0.0790333, 0, -0.996872, 0, 1, 0, 0.996872, 0, 0.0790333, 0, 0, 0 )
 
 [node name="FlashLight" type="SpotLight" parent="Player/Rotation"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+transform = Transform( 1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0, 1.3, 0 )
 light_energy = 3.32
 shadow_enabled = true
+shadow_bias = -0.01
+shadow_reverse_cull_face = true
 spot_range = 17.6
-spot_attenuation = 0.933033
-spot_angle = 20.9
-spot_angle_attenuation = 0.435275
+spot_attenuation = 1.22295
+spot_angle = 30.0
+spot_angle_attenuation = 1e+06
 
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00605, 0 )
-mesh = SubResource( 1 )
+[node name="Level" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
 material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
 
-[node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
-mesh = SubResource( 3 )
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 8.84935, 0, 0 )
+mesh = SubResource( 5 )
 material/0 = null
