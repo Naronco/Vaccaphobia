@@ -15,6 +15,9 @@ var curPhi = 0
 var targetPhi = 0
 export var lerpSpeed = 10
 
+var flashlightAngle = 0
+var flashlightAngleCur = 0
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -48,6 +51,7 @@ func _physics_process(delta):
 	
 	var cam = get_node("Camera")
 	var rot = get_node("Rotation")
+	var light = get_node("Rotation/FlashLight")
 	
 	var right = cam.transform.basis.x
 	var up = cam.transform.basis.y
@@ -73,6 +77,8 @@ func _physics_process(delta):
 		direction += planeForward
 	if Input.is_action_pressed("move_up"):
 		direction -= planeForward
+
+	light.transform.basis = Basis(Vector3(1, 0, 0), -PI/4)
 	
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
@@ -80,10 +86,19 @@ func _physics_process(delta):
 		# Direction to angle
 		targetPhi = 0.5*PI + atan2(direction.z, direction.x)
 		
+		flashlightAngle = -PI/4
+
+	else:
+		flashlightAngle = 0
+		
+		
+		
 	# Rotate player accordingly
 	curPhi = damp_angle(curPhi, targetPhi, lerpSpeed, delta)
+	flashlightAngleCur = damp_angle(flashlightAngleCur, flashlightAngle, lerpSpeed, delta)
 	
 	rot.transform = self.get_parent().transform.rotated(Vector3(0, 1, 0), -curPhi)
+	light.transform.basis = Basis(Vector3(1, 0, 0), flashlightAngleCur)
 	
 	# Ground velocity
 	velocity.x = direction.x * speed
