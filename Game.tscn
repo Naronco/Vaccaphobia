@@ -15,11 +15,11 @@ height = 1.4
 [node name="Spatial" type="Spatial"]
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02435, 0, 0.768314 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40651, 0, 0.768314 )
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 5.25, 10, 5.25 )
+transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 7.07, 10, 7.07 )
 environment = SubResource( 2 )
 projection = 1
 size = 5.0
@@ -28,7 +28,7 @@ size = 5.0
 transform = Transform( 0.0790333, 0, -0.996872, 0, 1, 0, 0.996872, 0, 0.0790333, 0, 0, 0 )
 
 [node name="FlashLight" type="SpotLight" parent="Player/Rotation"]
-transform = Transform( 1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0, 1.3, 0 )
+transform = Transform( 1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, 0, 0.1, 0 )
 light_energy = 3.32
 shadow_enabled = true
 shadow_bias = -0.01
@@ -41,6 +41,12 @@ spot_angle_attenuation = 1e+06
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
 shape = SubResource( 4 )
+
+[node name="OmniLight" type="OmniLight" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+light_energy = 0.07
+omni_range = 4.0
+omni_attenuation = 4.92457
 
 [node name="Level" type="MeshInstance" parent="."]
 mesh = ExtResource( 2 )
