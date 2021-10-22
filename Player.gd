@@ -89,16 +89,6 @@ func _physics_process(delta):
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
 	
-	# place player on floor
-	var space_state = get_world().direct_space_state
-	var result = space_state.intersect_ray(self.transform.origin + Vector3(0, 1.3, 0), self.transform.origin + Vector3(0, -100, 0))
-	
-	var rad = get_node("CollisionShape").shape.get_radius()
-	
-	if result:
-		print("Hit at point: ", transform.origin, result.position, result.normal)
-		transform.origin = result.position + rad*result.normal
-	
 	#var on_steep = false
 	#for i in get_slide_count():
 	#	var collision = get_slide_collision(i)
@@ -111,4 +101,17 @@ func _physics_process(delta):
 	#	velocity.y -= gravity * delta
 
 	# Moving the character
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide(velocity, Vector3.UP, false, 4, 60.0/180.0*PI)
+	velocity.y = 0
+	
+	# place player on floor
+	var space_state = get_world().direct_space_state
+	var result = space_state.intersect_ray(self.transform.origin + Vector3(0, 1.3, 0), self.transform.origin + Vector3(0, -100, 0))
+	
+	var rad = get_node("CollisionShape").shape.get_radius()
+	
+	if not is_on_floor() and result:
+		print("Hit at point/normal: ", result.position, result.normal)
+		#transform.origin = result.position + rad*result.normal
+		transform.origin = result.position + Vector3.UP*rad*(1/result.normal.y-1)
+	
