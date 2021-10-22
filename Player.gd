@@ -4,8 +4,10 @@ extends KinematicBody
 
 # How fast the player moves in meters per second.
 export var speed = 2
+export var gravity = 9.81
 
 var velocity = Vector3.ZERO
+
 
 
 # current rotation angle
@@ -86,7 +88,27 @@ func _physics_process(delta):
 	# Ground velocity
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
-	# Vertical velocity
-	#velocity.y -= fall_acceleration * delta
+	
+	# place player on floor
+	var space_state = get_world().direct_space_state
+	var result = space_state.intersect_ray(self.transform.origin + Vector3(0, 1.3, 0), self.transform.origin + Vector3(0, -100, 0))
+	
+	var rad = get_node("CollisionShape").shape.get_radius()
+	
+	if result:
+		print("Hit at point: ", transform.origin, result.position, result.normal)
+		transform.origin = result.position + rad*result.normal
+	
+	#var on_steep = false
+	#for i in get_slide_count():
+	#	var collision = get_slide_collision(i)
+	#	if collision.normal.dot(Vector3.UP) < 0.5: # TODO: make less arbitrary
+	#		on_steep = true
+	#		break # no need to check the rest of the slopes
+
+	#if not is_on_floor() or on_steep:
+	#	# Vertical velocity
+	#	velocity.y -= gravity * delta
+
 	# Moving the character
 	velocity = move_and_slide(velocity, Vector3.UP)
