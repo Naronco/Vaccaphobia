@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://default_env.tres" type="Environment" id=5]
 [ext_resource path="res://Interactable.gd" type="Script" id=6]
 [ext_resource path="res://PuzzleScreen.gd" type="Script" id=7]
+[ext_resource path="res://assets/slot.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -272,9 +273,70 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Inventory" type="Control" parent="MarginContainer/CanvasLayer"]
+anchor_bottom = 1.0
+margin_right = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureRect" parent="MarginContainer/CanvasLayer/Inventory"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot2" type="TextureRect" parent="MarginContainer/CanvasLayer/Inventory"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot3" type="TextureRect" parent="MarginContainer/CanvasLayer/Inventory"]
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot4" type="TextureRect" parent="MarginContainer/CanvasLayer/Inventory"]
+margin_top = 96.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot5" type="TextureRect" parent="MarginContainer/CanvasLayer/Inventory"]
+margin_top = 128.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot6" type="TextureRect" parent="MarginContainer/CanvasLayer/Inventory"]
+margin_top = 160.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PuzzleLayer" type="CanvasLayer" parent="MarginContainer"]
 
 [node name="PuzzleScreen" type="Control" parent="MarginContainer/PuzzleLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )

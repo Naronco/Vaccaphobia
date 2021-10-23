@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fireplace.obj-52015a232df1ae699ebfe1fe45960870.mesh"
+
+[deps]
+
+files=[ "res://.import/fireplace.obj-52015a232df1ae699ebfe1fe45960870.mesh" ]
+
+source_file="res://concept-art/fireplace.obj"
+dest_files=[ "res://.import/fireplace.obj-52015a232df1ae699ebfe1fe45960870.mesh", "res://.import/fireplace.obj-52015a232df1ae699ebfe1fe45960870.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
