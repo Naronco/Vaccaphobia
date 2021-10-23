@@ -1,6 +1,8 @@
 extends Area
 
 
+export var whatToDo = "open fuse box"
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

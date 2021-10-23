@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bookshelf.obj-25cbc4392f27ffe1625b8853e1e9d909.mesh"
+
+[deps]
+
+files=[ "res://.import/bookshelf.obj-25cbc4392f27ffe1625b8853e1e9d909.mesh" ]
+
+source_file="res://concept-art/bookshelf.obj"
+dest_files=[ "res://.import/bookshelf.obj-25cbc4392f27ffe1625b8853e1e9d909.mesh", "res://.import/bookshelf.obj-25cbc4392f27ffe1625b8853e1e9d909.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

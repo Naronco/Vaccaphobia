@@ -76,6 +76,7 @@ subsurf_scatter_strength = 0.54
 [node name="Player" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.407, 0, 0.768 )
 script = ExtResource( 1 )
+interactLabelPath = NodePath("../MarginContainer/CanvasLayer/InteractLabel")
 
 [node name="Rotation" type="Spatial" parent="Player"]
 transform = Transform( 0.0790333, 0, -0.996872, 0, 1, 0, 0.996872, 0, 0.0790333, 0, 0, 0 )
@@ -88,7 +89,6 @@ shadow_bias = -0.01
 shadow_reverse_cull_face = true
 spot_range = 17.6
 spot_attenuation = 1.22295
-spot_angle = 30.0
 spot_angle_attenuation = 0.293526
 
 [node name="MeshInstance" type="MeshInstance" parent="Player/Rotation"]
@@ -243,6 +243,32 @@ transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0
 environment = ExtResource( 5 )
 projection = 1
 size = 5.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer"]
+
+[node name="InteractLabel" type="Label" parent="MarginContainer/CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.888
+anchor_right = 0.5
+anchor_bottom = 0.888
+margin_left = -100.0
+margin_top = -15.0
+margin_right = 100.0
+margin_bottom = 15.6
+text = "Press E to "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="Level/Interactables/Area" to="Level/Interactables/Area" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Level/Interactables/Area" to="Level/Interactables/Area" method="_on_Area_body_exited"]

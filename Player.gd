@@ -27,6 +27,9 @@ var flashlightAngleCur = 0
 var currentInteractable = null
 
 
+export(NodePath) var interactLabelPath
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -180,9 +183,19 @@ func enable_interaction(interactable: Node):
 	print("Entered interaction area of ", interactable)
 	print("Press E to interact with ", interactable) # TODO replace with proper UI
 	currentInteractable = interactable
+	
+	if interactLabelPath != null:
+		var interactLabel = get_node(interactLabelPath)
+		interactLabel.text = "Press E to " + interactable.whatToDo
+		interactLabel.show()
+		
 
 
 func disable_interaction(interactable: Node):
+	if interactLabelPath != null:
+		var interactLabel = get_node(interactLabelPath)
+		interactLabel.hide()
+	
 	currentInteractable = null
 	print("Left interaction area of ", interactable)
 

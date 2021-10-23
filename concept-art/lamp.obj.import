@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/lamp.obj-67224851106bd2724c20e3c58368305e.mesh"
+
+[deps]
+
+files=[ "res://.import/lamp.obj-67224851106bd2724c20e3c58368305e.mesh" ]
+
+source_file="res://concept-art/lamp.obj"
+dest_files=[ "res://.import/lamp.obj-67224851106bd2724c20e3c58368305e.mesh", "res://.import/lamp.obj-67224851106bd2724c20e3c58368305e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
