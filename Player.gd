@@ -127,10 +127,10 @@ func _physics_process(delta):
 	
 	var rad = get_node("CollisionShape").shape.get_radius()
 	
-	print(is_on_floor())
+	#print(is_on_floor())
 	
 	if not is_on_floor() and result:
-		print("Hit at point/normal: ", result.position, result.normal)
+		#print("Hit at point/normal: ", result.position, result.normal)
 		#transform.origin = result.position + rad*result.normal
 		transform.origin = result.position + Vector3.UP*rad*(1/result.normal.y-1)
 		
