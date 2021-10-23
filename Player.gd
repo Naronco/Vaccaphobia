@@ -119,13 +119,15 @@ func _physics_process(delta):
 
 	# Moving the character
 	velocity = move_and_slide(velocity, Vector3.UP, false, 4, 60.0/180.0*PI)
-	velocity.y = 0
+	velocity.y = -0.01
 	
 	# place player on floor
 	var space_state = get_world().direct_space_state
 	var result = space_state.intersect_ray(self.transform.origin + Vector3(0, 1.3, 0), self.transform.origin + Vector3(0, -100, 0))
 	
 	var rad = get_node("CollisionShape").shape.get_radius()
+	
+	print(is_on_floor())
 	
 	if not is_on_floor() and result:
 		print("Hit at point/normal: ", result.position, result.normal)
