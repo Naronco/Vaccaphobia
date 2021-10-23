@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/milk_bottle.obj-74ed841613bb6d0cd7ea06833325c530.mesh"
+
+[deps]
+
+files=[ "res://.import/milk_bottle.obj-74ed841613bb6d0cd7ea06833325c530.mesh" ]
+
+source_file="res://concept-art/milk_bottle.obj"
+dest_files=[ "res://.import/milk_bottle.obj-74ed841613bb6d0cd7ea06833325c530.mesh", "res://.import/milk_bottle.obj-74ed841613bb6d0cd7ea06833325c530.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
