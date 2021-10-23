@@ -105,7 +105,9 @@ func _physics_process(delta):
 
 		light.transform.basis = Basis(Vector3(1, 0, 0), -PI/4)
 		
-		if direction != Vector3.ZERO:
+		var lockAngle = Input.is_action_pressed("strafe")
+		
+		if direction != Vector3.ZERO and not lockAngle:
 			direction = direction.normalized()
 			
 			# Direction to angle
@@ -124,6 +126,14 @@ func _physics_process(delta):
 		
 		rot.transform = self.get_parent().transform.rotated(Vector3(0, 1, 0), -curPhi)
 		light.transform.basis = Basis(Vector3(1, 0, 0), flashlightAngleCur)
+	
+		# Update sprite
+		var t=-(targetPhi-0.75*PI-0.125*PI)/(2*PI)
+		while t > 1.0:
+			t-=1.0
+		while t < 0.0:
+			t+=1.0
+		$Sprite3D.region_rect.position.x=283*(int(round(8*t))%8)
 	
 	# Ground velocity
 	velocity.x = direction.x * speed

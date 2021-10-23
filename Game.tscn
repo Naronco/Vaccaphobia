@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://PuzzleScreen.gd" type="Script" id=7]
 [ext_resource path="res://assets/slot.png" type="Texture" id=8]
 [ext_resource path="res://assets/key.png" type="Texture" id=9]
+[ext_resource path="res://concept-art/character_sheet.png" type="Texture" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -112,6 +113,13 @@ visible = false
 shadow_enabled = true
 omni_range = 1.5
 omni_attenuation = 1e-05
+
+[node name="Sprite3D" type="Sprite3D" parent="Player"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.05494, 0 )
+pixel_size = 0.0033
+texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 283, 0, 283, 640 )
 
 [node name="Level" type="MeshInstance" parent="."]
 mesh = ExtResource( 2 )
