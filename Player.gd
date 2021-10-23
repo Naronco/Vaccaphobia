@@ -8,6 +8,8 @@ export var gravity = 9.81
 
 var velocity = Vector3.ZERO
 
+export var camOffs = Vector3(10/sqrt(2), 10, 10/sqrt(2))
+
 
 
 # current rotation angle
@@ -49,7 +51,7 @@ func _physics_process(delta):
 	# We create a local variable to store the input direction.
 	var direction = Vector3.ZERO
 	
-	var cam = get_node("Camera")
+	var cam = get_node("../Camera")
 	var rot = get_node("Rotation")
 	var light = get_node("Rotation/FlashLight")
 	
@@ -130,6 +132,26 @@ func _physics_process(delta):
 		#transform.origin = result.position + rad*result.normal
 		transform.origin = result.position + Vector3.UP*rad*(1/result.normal.y-1)
 		
+	
+	# update cam pos
+	var camPos = transform.origin + 1.3*Vector3.UP + camOffs
+	
+	var f=camPos.dot(forward)
+	var u=camPos.dot(up)
+	var r=camPos.dot(right)
+	
+	# camPos==f*forward+u*up+r*right
+	
+	
+	var world2Screen=get_viewport().size.y/(2*cam.size)
+	
+	# quantize r,u
+	var s=world2Screen
+	r = floor(r*s)/s
+	u = floor(u*s)/s
+	
+	camPos=f*forward+u*up+r*right
+	cam.transform.origin=camPos
 	
 	# Hide/show level parts
 	var tutorialRoom = get_node("/root/Spatial/Level")
