@@ -48,12 +48,12 @@ func _process(delta):
 	pass
 	
 func lerp_angle(from, to, weight):
-    return from + short_angle_dist(from, to) * weight
+	return from + short_angle_dist(from, to) * weight
 
 func short_angle_dist(from, to):
-    var max_angle = PI * 2
-    var difference = fmod(to - from, max_angle)
-    return fmod(2 * difference, max_angle) - difference
+	var max_angle = PI * 2
+	var difference = fmod(to - from, max_angle)
+	return fmod(2 * difference, max_angle) - difference
 
 # framerate-independent lerping
 func damp_angle(from, to, lambda, dt):
@@ -190,7 +190,7 @@ func _physics_process(delta):
 	
 	# Hide/show level parts
 	var tutorialRoom = get_node("/root/Spatial/Level")
-	var flurOben = get_node("/root/Spatial/Level/flur_oben")
+	var flurOben = get_node("/root/Spatial/Level/1og/flur_oben")
 	
 	if transform.origin.y > 2.5-1.8:
 		flurOben.show()

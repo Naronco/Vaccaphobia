@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wohnzimmer.obj-1e67e54ee194622284ad6b6500320182.mesh"
+
+[deps]
+
+files=[ "res://.import/wohnzimmer.obj-1e67e54ee194622284ad6b6500320182.mesh" ]
+
+source_file="res://concept-art/wohnzimmer.obj"
+dest_files=[ "res://.import/wohnzimmer.obj-1e67e54ee194622284ad6b6500320182.mesh", "res://.import/wohnzimmer.obj-1e67e54ee194622284ad6b6500320182.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

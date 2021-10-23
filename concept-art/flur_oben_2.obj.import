@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/flur_oben_2.obj-84f6f1181bf29b02358b37d4f946e830.mesh"
+
+[deps]
+
+files=[ "res://.import/flur_oben_2.obj-84f6f1181bf29b02358b37d4f946e830.mesh" ]
+
+source_file="res://concept-art/flur_oben_2.obj"
+dest_files=[ "res://.import/flur_oben_2.obj-84f6f1181bf29b02358b37d4f946e830.mesh", "res://.import/flur_oben_2.obj-84f6f1181bf29b02358b37d4f946e830.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

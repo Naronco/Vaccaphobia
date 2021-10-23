@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
@@ -12,6 +12,20 @@
 [ext_resource path="res://concept-art/character_sheet.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Inventory.gd" type="Script" id=12]
+[ext_resource path="res://concept-art/side_desk.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://concept-art/cow_head.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://concept-art/outside.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://concept-art/bookshelf.obj" type="ArrayMesh" id=16]
+[ext_resource path="res://concept-art/wohnzimmer.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://concept-art/couch.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://concept-art/fireplace.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://concept-art/lamp.obj" type="ArrayMesh" id=20]
+[ext_resource path="res://concept-art/abstellraum.obj" type="ArrayMesh" id=21]
+[ext_resource path="res://concept-art/kind_raum.obj" type="ArrayMesh" id=22]
+[ext_resource path="res://concept-art/flur_oben_2.obj" type="ArrayMesh" id=23]
+[ext_resource path="res://concept-art/kitchen_unten.obj" type="ArrayMesh" id=24]
+[ext_resource path="res://concept-art/flur_unten.obj" type="ArrayMesh" id=25]
+[ext_resource path="res://concept-art/eltern_raum.obj" type="ArrayMesh" id=26]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -42,7 +56,7 @@ extents = Vector3( 0.193, 2, 0.623 )
 extents = Vector3( 10, 1, 10 )
 
 [sub_resource type="BoxShape" id=10]
-extents = Vector3( 6.4359, 0.255976, 2.73516 )
+extents = Vector3( 6.436, 0.256, 5.735 )
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 0.214206, 0.323331, 0.2828 )
@@ -181,7 +195,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 shape = SubResource( 9 )
 
 [node name="StaticBody8" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3178, 1.71494 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.318, 4.715 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody8"]
 shape = SubResource( 10 )
@@ -217,9 +231,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24075, 3.03139, -1.71577 )
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody11"]
 shape = SubResource( 15 )
 
-[node name="flur_oben" parent="Level" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51, -0.748 )
-
 [node name="Interactables" type="Spatial" parent="Level"]
 
 [node name="FuseBox" type="Area" parent="Level/Interactables"]
@@ -231,6 +242,144 @@ puzzleScreenPath = NodePath("../../../MarginContainer/PuzzleLayer/PuzzleScreen")
 shape = SubResource( 16 )
 
 [node name="Door" parent="Level/Interactables" instance=ExtResource( 11 )]
+
+[node name="outside" type="Spatial" parent="Level"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.9, 0.01, 8 )
+
+[node name="outside" type="MeshInstance" parent="Level/outside"]
+mesh = ExtResource( 15 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+
+[node name="1og" type="Spatial" parent="Level"]
+
+[node name="eltern_raum" type="Spatial" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83361, 2.5, -3.45394 )
+
+[node name="eltern_raum" type="MeshInstance" parent="Level/1og/eltern_raum"]
+mesh = ExtResource( 26 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="flur_oben_2" type="Spatial" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78973, 2.5, -1.39502 )
+
+[node name="flur_oben_2" type="MeshInstance" parent="Level/1og/flur_oben_2"]
+mesh = ExtResource( 23 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="kind_raum" type="Spatial" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.80904, 2.5, 1.87065 )
+
+[node name="kind_raum" type="MeshInstance" parent="Level/1og/kind_raum"]
+mesh = ExtResource( 22 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="abstellraum" type="Spatial" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130045, 2.5, 8.98723 )
+
+[node name="abstellraum" type="MeshInstance" parent="Level/1og/abstellraum"]
+mesh = ExtResource( 21 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="wohnzimmer" type="Spatial" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 2.51, 4.3 )
+
+[node name="wohnzimmer" type="MeshInstance" parent="Level/1og/wohnzimmer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00402427, 0.00463033, -0.00418949 )
+mesh = ExtResource( 17 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="bookshelf" type="MeshInstance" parent="Level/1og/wohnzimmer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75278, 0, -2.35412 )
+mesh = ExtResource( 16 )
+material/0 = null
+
+[node name="cow_head" type="MeshInstance" parent="Level/1og/wohnzimmer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96397, 1.56631, -3.5197 )
+mesh = ExtResource( 14 )
+material/0 = null
+material/1 = null
+
+[node name="fireplace" type="MeshInstance" parent="Level/1og/wohnzimmer"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.58257, 0, 0.573023 )
+mesh = ExtResource( 19 )
+material/0 = null
+
+[node name="couch" type="MeshInstance" parent="Level/1og/wohnzimmer"]
+transform = Transform( 0.361674, 0, -0.932305, 0, 1, 0, 0.932305, 0, 0.361674, 0.23955, 0.0214813, -0.555419 )
+mesh = ExtResource( 18 )
+material/0 = null
+
+[node name="lamp" type="MeshInstance" parent="Level/1og/wohnzimmer"]
+transform = Transform( 0.361674, 0, -0.932305, 0, 1, 0, 0.932305, 0, 0.361674, 1.48858, 0.00463033, -2.98449 )
+mesh = ExtResource( 20 )
+material/0 = null
+
+[node name="side_desk" type="MeshInstance" parent="Level/1og/wohnzimmer"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7297, 0.0046308, 1.62508 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="flur_oben" parent="Level/1og" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51, -0.748 )
+
+[node name="eg" type="Spatial" parent="Level"]
+
+[node name="kitchen_unten" type="Spatial" parent="Level/eg"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27913, 0, 1.86404 )
+
+[node name="kitchen_unten" type="MeshInstance" parent="Level/eg/kitchen_unten"]
+mesh = ExtResource( 24 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="wohnzimmer_unten" type="Spatial" parent="Level/eg"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.763433, 0, 4.34843 )
+
+[node name="wohnzimmer" type="MeshInstance" parent="Level/eg/wohnzimmer_unten"]
+mesh = ExtResource( 17 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="flur_unten" type="Spatial" parent="Level/eg"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29117, 0, -1.22228 )
+
+[node name="flur_unten" type="MeshInstance" parent="Level/eg/flur_unten"]
+mesh = ExtResource( 25 )
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 13.9247, 0, 0 )

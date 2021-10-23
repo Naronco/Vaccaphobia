@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/kind_raum.obj-f4acb7130e3c6bda05daa73a356db57b.mesh"
+
+[deps]
+
+files=[ "res://.import/kind_raum.obj-f4acb7130e3c6bda05daa73a356db57b.mesh" ]
+
+source_file="res://concept-art/kind_raum.obj"
+dest_files=[ "res://.import/kind_raum.obj-f4acb7130e3c6bda05daa73a356db57b.mesh", "res://.import/kind_raum.obj-f4acb7130e3c6bda05daa73a356db57b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
