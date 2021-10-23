@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/slot.png" type="Texture" id=8]
 [ext_resource path="res://assets/key.png" type="Texture" id=9]
 [ext_resource path="res://concept-art/character_sheet.png" type="Texture" id=10]
+[ext_resource path="res://Door.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -228,6 +229,13 @@ puzzleScreenPath = NodePath("../../../MarginContainer/PuzzleLayer/PuzzleScreen")
 [node name="CollisionShape" type="CollisionShape" parent="Level/Interactables/FuseBox"]
 shape = SubResource( 16 )
 
+[node name="Door" type="Area" parent="Level/Interactables"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6735, 3.79207, -0.944281 )
+script = ExtResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/Interactables/Door"]
+shape = SubResource( 16 )
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 13.9247, 0, 0 )
 mesh = SubResource( 17 )
@@ -385,3 +393,5 @@ __meta__ = {
 
 [connection signal="body_entered" from="Level/Interactables/FuseBox" to="Level/Interactables/FuseBox" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Level/Interactables/FuseBox" to="Level/Interactables/FuseBox" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Level/Interactables/Door" to="Level/Interactables/Door" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Level/Interactables/Door" to="Level/Interactables/Door" method="_on_Area_body_exited"]
