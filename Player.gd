@@ -129,4 +129,16 @@ func _physics_process(delta):
 		print("Hit at point/normal: ", result.position, result.normal)
 		#transform.origin = result.position + rad*result.normal
 		transform.origin = result.position + Vector3.UP*rad*(1/result.normal.y-1)
+		
+	
+	# Hide/show level parts
+	var tutorialRoom = get_node("/root/Spatial/Level")
+	var flurOben = get_node("/root/Spatial/FlurOben")
+	
+	if transform.origin.y > 2.5-1.0:
+		flurOben.show()
+	else:
+		flurOben.hide()
+	
+	
 	

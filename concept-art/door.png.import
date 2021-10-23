@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/lamp_hat.png-fd8f6e59c72653c0362b1e13ef24aa9e.s3tc.stex"
-path.etc2="res://.import/lamp_hat.png-fd8f6e59c72653c0362b1e13ef24aa9e.etc2.stex"
+path.s3tc="res://.import/door.png-cd8389486c2df93c1b5acf8a6c287fae.s3tc.stex"
+path.etc2="res://.import/door.png-cd8389486c2df93c1b5acf8a6c287fae.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://concept-art/lamp_hat.png"
-dest_files=[ "res://.import/lamp_hat.png-fd8f6e59c72653c0362b1e13ef24aa9e.s3tc.stex", "res://.import/lamp_hat.png-fd8f6e59c72653c0362b1e13ef24aa9e.etc2.stex" ]
+source_file="res://concept-art/door.png"
+dest_files=[ "res://.import/door.png-cd8389486c2df93c1b5acf8a6c287fae.s3tc.stex", "res://.import/door.png-cd8389486c2df93c1b5acf8a6c287fae.etc2.stex" ]
 
 [params]
 

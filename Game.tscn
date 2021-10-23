@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://concept-art/flur_oben.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="Environment" id=2]
 background_energy = 0.0
@@ -14,7 +15,7 @@ height = 1.4
 extents = Vector3( 1, 0.482235, 0.601022 )
 
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 0.239876, 5.18697, 2.72443 )
+extents = Vector3( 0.239876, 1.5801, 2.72443 )
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.236717, 5.33572, 2.73629 )
@@ -32,12 +33,18 @@ extents = Vector3( 0.193, 2, 0.623 )
 extents = Vector3( 10, 1, 10 )
 
 [sub_resource type="BoxShape" id=13]
-extents = Vector3( 3.22619, 0.255976, 2.73516 )
+extents = Vector3( 6.4359, 0.255976, 2.73516 )
 
 [sub_resource type="BoxShape" id=14]
 extents = Vector3( 3.22619, 0.255976, 2.73516 )
 
 [sub_resource type="PlaneMesh" id=5]
+
+[sub_resource type="BoxShape" id=15]
+extents = Vector3( 2.35621, 0.59184, 0.110453 )
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 0.126588, 0.59184, 0.623059 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -64,6 +71,8 @@ spot_range = 17.6
 spot_attenuation = 1.22295
 spot_angle = 30.0
 spot_angle_attenuation = 0.293526
+
+[node name="MeshInstance" type="MeshInstance" parent="Player/Rotation"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
@@ -98,7 +107,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280068, 0.221992, 0.515836 
 shape = SubResource( 6 )
 
 [node name="StaticBody2" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98244, 1.22786, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98244, 0.919814, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody2"]
 shape = SubResource( 7 )
@@ -161,3 +170,42 @@ directional_shadow_split_1 = 0.32
 directional_shadow_split_2 = 0.308
 directional_shadow_split_3 = 0.498
 directional_shadow_bias_split_scale = 0.12
+
+[node name="FlurOben" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.75338 )
+mesh = ExtResource( 3 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+material/21 = null
+material/22 = null
+
+[node name="StaticBody" type="StaticBody" parent="FlurOben"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.945251, 0.531395, -0.435684 )
+
+[node name="CollisionShape" type="CollisionShape" parent="FlurOben/StaticBody"]
+shape = SubResource( 15 )
+
+[node name="StaticBody2" type="StaticBody" parent="FlurOben"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24075, 0.531395, -0.962389 )
+
+[node name="CollisionShape" type="CollisionShape" parent="FlurOben/StaticBody2"]
+shape = SubResource( 16 )
