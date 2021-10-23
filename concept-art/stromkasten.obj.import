@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stromkasten.obj-56e1456406b7dcb9a9b05a4139b6c5bf.mesh"
+
+[deps]
+
+files=[ "res://.import/stromkasten.obj-56e1456406b7dcb9a9b05a4139b6c5bf.mesh" ]
+
+source_file="res://concept-art/stromkasten.obj"
+dest_files=[ "res://.import/stromkasten.obj-56e1456406b7dcb9a9b05a4139b6c5bf.mesh", "res://.import/stromkasten.obj-56e1456406b7dcb9a9b05a4139b6c5bf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

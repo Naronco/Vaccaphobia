@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tutorial_tisch.obj-14d37efa7daafb60c9c3700208b53175.mesh"
+
+[deps]
+
+files=[ "res://.import/tutorial_tisch.obj-14d37efa7daafb60c9c3700208b53175.mesh" ]
+
+source_file="res://concept-art/tutorial_tisch.obj"
+dest_files=[ "res://.import/tutorial_tisch.obj-14d37efa7daafb60c9c3700208b53175.mesh", "res://.import/tutorial_tisch.obj-14d37efa7daafb60c9c3700208b53175.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

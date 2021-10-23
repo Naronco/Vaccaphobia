@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/couch.png-c1f7bc7721691db6274a70da4949dd22.s3tc.stex"
-path.etc2="res://.import/couch.png-c1f7bc7721691db6274a70da4949dd22.etc2.stex"
+path.s3tc="res://.import/cow_head.png-e9b53ad2831c0b77358f12dbaebd2a41.s3tc.stex"
+path.etc2="res://.import/cow_head.png-e9b53ad2831c0b77358f12dbaebd2a41.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://concept-art/couch.png"
-dest_files=[ "res://.import/couch.png-c1f7bc7721691db6274a70da4949dd22.s3tc.stex", "res://.import/couch.png-c1f7bc7721691db6274a70da4949dd22.etc2.stex" ]
+source_file="res://concept-art/cow_head.png"
+dest_files=[ "res://.import/cow_head.png-e9b53ad2831c0b77358f12dbaebd2a41.s3tc.stex", "res://.import/cow_head.png-e9b53ad2831c0b77358f12dbaebd2a41.etc2.stex" ]
 
 [params]
 
