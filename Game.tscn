@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Interactable.gd" type="Script" id=6]
 [ext_resource path="res://PuzzleScreen.gd" type="Script" id=7]
 [ext_resource path="res://assets/slot.png" type="Texture" id=8]
+[ext_resource path="res://assets/key.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -329,6 +330,14 @@ margin_top = 160.0
 margin_right = 32.0
 margin_bottom = 32.0
 texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CanvasLayer"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
