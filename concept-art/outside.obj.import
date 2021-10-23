@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/outside.obj-2d0f42868e3976246eaaccbbce72de02.mesh"
+
+[deps]
+
+files=[ "res://.import/outside.obj-2d0f42868e3976246eaaccbbce72de02.mesh" ]
+
+source_file="res://concept-art/outside.obj"
+dest_files=[ "res://.import/outside.obj-2d0f42868e3976246eaaccbbce72de02.mesh", "res://.import/outside.obj-2d0f42868e3976246eaaccbbce72de02.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
