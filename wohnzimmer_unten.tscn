@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://concept-art/wohnzimmer.obj" type="ArrayMesh" id=1]
+
+[node name="wohnzimmer_unten" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.763433, 0, 4.34843 )
+
+[node name="wohnzimmer" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null

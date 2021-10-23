@@ -1,8 +1,8 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://concept-art/stromkasten.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://concept-art/flur_oben.obj" type="PackedScene" id=3]
+[ext_resource path="res://flur_unten.tscn" type="PackedScene" id=2]
+[ext_resource path="res://concept-art/flur_oben.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://concept-art/milk_bottle.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://default_env.tres" type="Environment" id=5]
 [ext_resource path="res://Interactable.gd" type="Script" id=6]
@@ -12,107 +12,36 @@
 [ext_resource path="res://concept-art/character_sheet.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Inventory.gd" type="Script" id=12]
-[ext_resource path="res://concept-art/side_desk.obj" type="ArrayMesh" id=13]
-[ext_resource path="res://concept-art/cow_head.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://eltern_raum.tscn" type="PackedScene" id=13]
+[ext_resource path="res://kitchen_unten.tscn" type="PackedScene" id=14]
 [ext_resource path="res://concept-art/outside.obj" type="ArrayMesh" id=15]
-[ext_resource path="res://concept-art/bookshelf.obj" type="ArrayMesh" id=16]
-[ext_resource path="res://concept-art/wohnzimmer.obj" type="ArrayMesh" id=17]
-[ext_resource path="res://concept-art/couch.obj" type="ArrayMesh" id=18]
-[ext_resource path="res://concept-art/fireplace.obj" type="ArrayMesh" id=19]
-[ext_resource path="res://concept-art/lamp.obj" type="ArrayMesh" id=20]
-[ext_resource path="res://concept-art/abstellraum.obj" type="ArrayMesh" id=21]
-[ext_resource path="res://concept-art/kind_raum.obj" type="ArrayMesh" id=22]
-[ext_resource path="res://concept-art/flur_oben_2.obj" type="ArrayMesh" id=23]
-[ext_resource path="res://concept-art/kitchen_unten.obj" type="ArrayMesh" id=24]
-[ext_resource path="res://concept-art/flur_unten.obj" type="ArrayMesh" id=25]
-[ext_resource path="res://concept-art/eltern_raum.obj" type="ArrayMesh" id=26]
-[ext_resource path="res://concept-art/lamp.png" type="Texture" id=27]
-[ext_resource path="res://concept-art/couch.png" type="Texture" id=28]
-[ext_resource path="res://concept-art/cow_head.png" type="Texture" id=29]
-[ext_resource path="res://concept-art/bookshelf.png" type="Texture" id=30]
-[ext_resource path="res://concept-art/mount_wood.png" type="Texture" id=31]
-[ext_resource path="res://concept-art/fireplace.png" type="Texture" id=32]
-[ext_resource path="res://concept-art/tutorial_tisch.obj" type="ArrayMesh" id=33]
+[ext_resource path="res://wohnzimmer_unten.tscn" type="PackedScene" id=16]
+[ext_resource path="res://flur_oben_2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://kind_raum.tscn" type="PackedScene" id=18]
+[ext_resource path="res://abstellraum.tscn" type="PackedScene" id=19]
+[ext_resource path="res://wohnzimmer.tscn" type="PackedScene" id=20]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
 height = 1.4
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 1, 0.393087, 0.601022 )
+extents = Vector3( 17.9118, 1, 13.604 )
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.239876, 1.5801, 2.72443 )
-
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 0.239876, 1.5801, 2.72443 )
-
-[sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.236717, 5.33572, 2.73629 )
-
-[sub_resource type="BoxShape" id=6]
-extents = Vector3( 3.23229, 5.3193, 0.265728 )
-
-[sub_resource type="BoxShape" id=7]
-extents = Vector3( 3.23229, 1.33105, 0.265728 )
-
-[sub_resource type="BoxShape" id=8]
-extents = Vector3( 0.193, 2, 0.623 )
-
-[sub_resource type="BoxShape" id=9]
-extents = Vector3( 10, 1, 10 )
-
-[sub_resource type="BoxShape" id=10]
-extents = Vector3( 6.436, 0.256, 5.735 )
-
-[sub_resource type="BoxShape" id=11]
-extents = Vector3( 0.214206, 0.323331, 0.2828 )
-
-[sub_resource type="BoxShape" id=12]
-extents = Vector3( 1.29467, 0.255976, 2.73516 )
-
-[sub_resource type="BoxShape" id=13]
-extents = Vector3( 3.22619, 0.255976, 2.73516 )
-
-[sub_resource type="BoxShape" id=14]
-extents = Vector3( 2.35621, 0.59184, 0.110453 )
-
-[sub_resource type="BoxShape" id=15]
-extents = Vector3( 0.126588, 0.59184, 0.623059 )
-
-[sub_resource type="CylinderShape" id=16]
+[sub_resource type="CylinderShape" id=3]
 radius = 0.696889
 height = 2.52381
 
-[sub_resource type="SpatialMaterial" id=17]
-albedo_texture = ExtResource( 30 )
+[sub_resource type="PlaneMesh" id=4]
 
-[sub_resource type="SpatialMaterial" id=18]
-albedo_texture = ExtResource( 29 )
-
-[sub_resource type="SpatialMaterial" id=19]
-albedo_color = Color( 0.784314, 0.0470588, 0.0470588, 1 )
-albedo_texture = ExtResource( 31 )
-
-[sub_resource type="SpatialMaterial" id=20]
-albedo_texture = ExtResource( 32 )
-
-[sub_resource type="SpatialMaterial" id=21]
-albedo_texture = ExtResource( 28 )
-
-[sub_resource type="SpatialMaterial" id=22]
-albedo_texture = ExtResource( 27 )
-
-[sub_resource type="PlaneMesh" id=23]
-
-[sub_resource type="SpatialMaterial" id=24]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 1, 1, 1, 0.32549 )
 roughness = 0.0
 refraction_enabled = true
 refraction_scale = 0.0
 refraction_texture_channel = 0
 
-[sub_resource type="SpatialMaterial" id=25]
+[sub_resource type="SpatialMaterial" id=6]
 roughness = 0.52
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.54
@@ -167,91 +96,11 @@ region_rect = Rect2( 283, 0, 283, 640 )
 
 [node name="Colliders" type="Spatial" parent="Level"]
 
-[node name="StaticBody" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280068, 0.221992, 0.515836 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.39881, 1.19209e-07, -1.23798 )
-shape = SubResource( 2 )
-
-[node name="StaticBody2" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98244, 0.919814, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody2"]
-shape = SubResource( 3 )
-
-[node name="StaticBody12" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64879, 3.80049, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody12"]
-shape = SubResource( 4 )
-
-[node name="StaticBody3" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00538, 1.22786, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody3"]
-shape = SubResource( 5 )
-
-[node name="StaticBody4" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122354, 1.22786, -2.48057 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody4"]
-shape = SubResource( 6 )
-
-[node name="StaticBody5" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122354, 1.22786, 2.4688 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody5"]
-shape = SubResource( 7 )
-
-[node name="StaticBody6" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.0122354, 1.07359, -1.62472 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody6"]
-shape = SubResource( 8 )
-
-[node name="StaticBody7" type="StaticBody" parent="Level/Colliders"]
+[node name="Worldground" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody7"]
-shape = SubResource( 9 )
-
-[node name="StaticBody8" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.318, 4.715 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody8"]
-shape = SubResource( 10 )
-
-[node name="StaticBody14" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51108, 2.8415, 0.407926 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody14"]
-shape = SubResource( 11 )
-
-[node name="StaticBody13" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32792, 2.3178, -1.02449 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody13"]
-shape = SubResource( 12 )
-
-[node name="StaticBody9" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3178, 1.71494 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody9"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.51735, 0, -5.43359 )
-shape = SubResource( 13 )
-
-[node name="StaticBody10" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.945251, 3.03139, -1.18906 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody10"]
-shape = SubResource( 14 )
-
-[node name="StaticBody11" type="StaticBody" parent="Level/Colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24075, 3.03139, -1.71577 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody11"]
-shape = SubResource( 15 )
+[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/Worldground"]
+shape = SubResource( 2 )
 
 [node name="Interactables" type="Spatial" parent="Level"]
 
@@ -261,7 +110,7 @@ script = ExtResource( 6 )
 puzzleScreenPath = NodePath("../../../MarginContainer/PuzzleLayer/PuzzleScreen")
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Interactables/FuseBox"]
-shape = SubResource( 16 )
+shape = SubResource( 3 )
 
 [node name="Door" parent="Level/Interactables" instance=ExtResource( 11 )]
 
@@ -293,132 +142,57 @@ material/19 = null
 material/20 = null
 
 [node name="1og" type="Spatial" parent="Level"]
-visible = false
 
-[node name="eltern_raum" type="Spatial" parent="Level/1og"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83361, 2.5, -3.45394 )
+[node name="eltern_raum" parent="Level/1og" instance=ExtResource( 13 )]
 
-[node name="eltern_raum" type="MeshInstance" parent="Level/1og/eltern_raum"]
-mesh = ExtResource( 26 )
+[node name="flur_oben_2" parent="Level/1og" instance=ExtResource( 17 )]
+
+[node name="kind_raum" parent="Level/1og" instance=ExtResource( 18 )]
+
+[node name="abstellraum" parent="Level/1og" instance=ExtResource( 19 )]
+
+[node name="wohnzimmer" parent="Level/1og" instance=ExtResource( 20 )]
+
+[node name="flur_oben" type="Spatial" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, 2.51, -0.758 )
+
+[node name="flur_oben" type="MeshInstance" parent="Level/1og/flur_oben"]
+mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
 material/2 = null
-
-[node name="flur_oben_2" type="Spatial" parent="Level/1og"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78973, 2.5, -1.39502 )
-
-[node name="flur_oben_2" type="MeshInstance" parent="Level/1og/flur_oben_2"]
-mesh = ExtResource( 23 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="kind_raum" type="Spatial" parent="Level/1og"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.80904, 2.5, 1.87065 )
-
-[node name="kind_raum" type="MeshInstance" parent="Level/1og/kind_raum"]
-mesh = ExtResource( 22 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="abstellraum" type="Spatial" parent="Level/1og"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130045, 2.5, 8.98723 )
-
-[node name="abstellraum" type="MeshInstance" parent="Level/1og/abstellraum"]
-mesh = ExtResource( 21 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="wohnzimmer" type="Spatial" parent="Level/1og"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 2.51, 4.3 )
-
-[node name="wohnzimmer" type="MeshInstance" parent="Level/1og/wohnzimmer"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00402427, 0.00463033, -0.00418949 )
-mesh = ExtResource( 17 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="bookshelf" type="MeshInstance" parent="Level/1og/wohnzimmer"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75278, 0, -2.35412 )
-mesh = ExtResource( 16 )
-material/0 = SubResource( 17 )
-
-[node name="cow_head" type="MeshInstance" parent="Level/1og/wohnzimmer"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96397, 1.56631, -3.5197 )
-mesh = ExtResource( 14 )
-material/0 = SubResource( 18 )
-material/1 = SubResource( 19 )
-
-[node name="fireplace" type="MeshInstance" parent="Level/1og/wohnzimmer"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.58257, 0, 0.573023 )
-mesh = ExtResource( 19 )
-material/0 = SubResource( 20 )
-
-[node name="couch" type="MeshInstance" parent="Level/1og/wohnzimmer"]
-transform = Transform( 0.361674, 0, -0.932305, 0, 1, 0, 0.932305, 0, 0.361674, 0.23955, 0.0214813, -0.555419 )
-mesh = ExtResource( 18 )
-material/0 = SubResource( 21 )
-
-[node name="lamp" type="MeshInstance" parent="Level/1og/wohnzimmer"]
-transform = Transform( 0.361674, 0, -0.932305, 0, 1, 0, 0.932305, 0, 0.361674, 1.48858, 0.00463033, -2.98449 )
-mesh = ExtResource( 20 )
-material/0 = SubResource( 22 )
-
-[node name="side_desk" type="MeshInstance" parent="Level/1og/wohnzimmer"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7297, 0.0046308, 1.62508 )
-mesh = ExtResource( 13 )
-material/0 = null
-
-[node name="flur_oben" parent="Level/1og" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00542879, 2.51, -0.757937 )
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+material/21 = null
+material/22 = null
 
 [node name="eg" type="Spatial" parent="Level"]
 
-[node name="tutorial_raum" type="Spatial" parent="Level/eg"]
+[node name="kitchen_unten" parent="Level/eg" instance=ExtResource( 14 )]
 
-[node name="stromkasten" type="MeshInstance" parent="Level/eg/tutorial_raum"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62152, 1.32899, -0.117718 )
-mesh = ExtResource( 2 )
-material/0 = null
+[node name="wohnzimmer_unten" parent="Level/eg" instance=ExtResource( 16 )]
 
-[node name="tutorial_tisch" type="MeshInstance" parent="Level/eg/tutorial_raum"]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.10787, 2.38419e-07, -0.721072 )
-mesh = ExtResource( 33 )
-material/0 = null
-
-[node name="kitchen_unten" type="Spatial" parent="Level/eg"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27913, 0, 1.86404 )
-
-[node name="kitchen_unten" type="MeshInstance" parent="Level/eg/kitchen_unten"]
-mesh = ExtResource( 24 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="wohnzimmer_unten" type="Spatial" parent="Level/eg"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.763433, 0, 4.34843 )
-
-[node name="wohnzimmer" type="MeshInstance" parent="Level/eg/wohnzimmer_unten"]
-mesh = ExtResource( 17 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="flur_unten" type="Spatial" parent="Level/eg"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29117, 0, -1.22228 )
-
-[node name="flur_unten" type="MeshInstance" parent="Level/eg/flur_unten"]
-mesh = ExtResource( 25 )
-material/0 = null
-material/1 = null
-material/2 = null
+[node name="flur_unten" parent="Level/eg" instance=ExtResource( 2 )]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 13.9247, 0, 0 )
-mesh = SubResource( 23 )
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 16.2798, 0, 0 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -434,8 +208,8 @@ directional_shadow_bias_split_scale = 0.12
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04111, 0.651772, 0.180237 )
 visible = false
 mesh = ExtResource( 4 )
-material/0 = SubResource( 24 )
-material/1 = SubResource( 25 )
+material/0 = SubResource( 5 )
+material/1 = SubResource( 6 )
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]

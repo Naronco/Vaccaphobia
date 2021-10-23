@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://concept-art/kitchen_unten.obj" type="ArrayMesh" id=1]
+
+[node name="kitchen_unten" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27913, 0, 1.86404 )
+
+[node name="kitchen_unten" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
