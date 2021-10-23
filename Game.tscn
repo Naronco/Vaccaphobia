@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/flur_oben.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://concept-art/milk_bottle.obj" type="ArrayMesh" id=4]
 
 [sub_resource type="Environment" id=2]
 background_energy = 0.0
@@ -45,6 +46,18 @@ extents = Vector3( 2.35621, 0.59184, 0.110453 )
 
 [sub_resource type="BoxShape" id=16]
 extents = Vector3( 0.126588, 0.59184, 0.623059 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_color = Color( 1, 1, 1, 0.32549 )
+roughness = 0.0
+refraction_enabled = true
+refraction_scale = 0.0
+refraction_texture_channel = 0
+
+[sub_resource type="SpatialMaterial" id=18]
+roughness = 0.52
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.54
 
 [node name="Spatial" type="Spatial"]
 
@@ -209,3 +222,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24075, 0.531395, -0.962389 )
 
 [node name="CollisionShape" type="CollisionShape" parent="FlurOben/StaticBody2"]
 shape = SubResource( 16 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04111, 0.651772, 0.180237 )
+visible = false
+mesh = ExtResource( 4 )
+material/0 = SubResource( 17 )
+material/1 = SubResource( 18 )
+material/2 = null
