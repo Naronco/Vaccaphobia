@@ -3,6 +3,9 @@ extends Area
 
 export var whatToDo = "open fuse box"
 
+
+export(NodePath) var puzzleScreenPath
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -32,3 +35,11 @@ func _on_Area_body_exited(body):
 	
 	
 	pass # Replace with function body.
+
+
+func on_player_interact(player):
+	var puzzleScreen = get_node(puzzleScreenPath)
+	player.disable_movement()
+	puzzleScreen.show()
+	
+	pass

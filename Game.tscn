@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://concept-art/milk_bottle.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://default_env.tres" type="Environment" id=5]
 [ext_resource path="res://Interactable.gd" type="Script" id=6]
+[ext_resource path="res://PuzzleScreen.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -209,11 +210,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51, -0.748 )
 
 [node name="Interactables" type="Spatial" parent="Level"]
 
-[node name="Area" type="Area" parent="Level/Interactables"]
+[node name="FuseBox" type="Area" parent="Level/Interactables"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6735, 1.10488, 0.909567 )
 script = ExtResource( 6 )
+puzzleScreenPath = NodePath("../../../MarginContainer/PuzzleLayer/PuzzleScreen")
 
-[node name="CollisionShape" type="CollisionShape" parent="Level/Interactables/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Level/Interactables/FuseBox"]
 shape = SubResource( 16 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
@@ -270,5 +272,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="body_entered" from="Level/Interactables/Area" to="Level/Interactables/Area" method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Level/Interactables/Area" to="Level/Interactables/Area" method="_on_Area_body_exited"]
+[node name="PuzzleLayer" type="CanvasLayer" parent="MarginContainer"]
+
+[node name="PuzzleScreen" type="Control" parent="MarginContainer/PuzzleLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+playerPath = NodePath("../../../Player")
+
+[node name="Popup" type="TextureRect" parent="MarginContainer/PuzzleLayer/PuzzleScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 50.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractLabel2" type="Label" parent="MarginContainer/PuzzleLayer/PuzzleScreen"]
+anchor_left = 0.5
+anchor_top = 0.071
+anchor_right = 0.5
+anchor_bottom = 0.071
+margin_left = 136.0
+margin_top = 3.46
+margin_right = 336.0
+margin_bottom = 34.06
+text = "Puzzle"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Level/Interactables/FuseBox" to="Level/Interactables/FuseBox" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Level/Interactables/FuseBox" to="Level/Interactables/FuseBox" method="_on_Area_body_exited"]

@@ -30,6 +30,9 @@ var currentInteractable = null
 export(NodePath) var interactLabelPath
 
 
+var movement_enabled = true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -52,10 +55,16 @@ func short_angle_dist(from, to):
 func damp_angle(from, to, lambda, dt):
 	return lerp_angle(from, to, 1 - exp(-lambda * dt))
 	
+
+func enable_movement():
+	movement_enabled = true
+
+func disable_movement():
+	movement_enabled = false
+
+
 func _physics_process(delta):
-	# We create a local variable to store the input direction.
-	var direction = Vector3.ZERO
-	
+
 	var cam = get_node("../Camera")
 	var rot = get_node("Rotation")
 	var light = get_node("Rotation/FlashLight")
@@ -73,39 +82,44 @@ func _physics_process(delta):
 	var planeRight = right
 	planeRight.y = 0
 	planeRight = planeRight.normalized()
+
+	# We create a local variable to store the input direction.
+	var direction = Vector3.ZERO
 	
 
-	# We check for each move input and update the direction accordingly.
-	if Input.is_action_pressed("move_right"):
-		direction += planeRight
-	if Input.is_action_pressed("move_left"):
-		direction -= planeRight
-	if Input.is_action_pressed("move_down"):
-		direction += planeForward
-	if Input.is_action_pressed("move_up"):
-		direction -= planeForward
+	if movement_enabled:
+		
+		# We check for each move input and update the direction accordingly.
+		if Input.is_action_pressed("move_right"):
+			direction += planeRight
+		if Input.is_action_pressed("move_left"):
+			direction -= planeRight
+		if Input.is_action_pressed("move_down"):
+			direction += planeForward
+		if Input.is_action_pressed("move_up"):
+			direction -= planeForward
 
-	light.transform.basis = Basis(Vector3(1, 0, 0), -PI/4)
-	
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
+		light.transform.basis = Basis(Vector3(1, 0, 0), -PI/4)
 		
-		# Direction to angle
-		targetPhi = 0.5*PI + atan2(direction.z, direction.x)
-		
-		flashlightAngle = -PI/4
+		if direction != Vector3.ZERO:
+			direction = direction.normalized()
+			
+			# Direction to angle
+			targetPhi = 0.5*PI + atan2(direction.z, direction.x)
+			
+			flashlightAngle = -PI/4
 
-	else:
-		flashlightAngle = 0
+		else:
+			flashlightAngle = 0
+			
+			
+			
+		# Rotate player accordingly
+		curPhi = damp_angle(curPhi, targetPhi, lerpSpeed, delta)
+		flashlightAngleCur = damp_angle(flashlightAngleCur, flashlightAngle, lerpSpeed, delta)
 		
-		
-		
-	# Rotate player accordingly
-	curPhi = damp_angle(curPhi, targetPhi, lerpSpeed, delta)
-	flashlightAngleCur = damp_angle(flashlightAngleCur, flashlightAngle, lerpSpeed, delta)
-	
-	rot.transform = self.get_parent().transform.rotated(Vector3(0, 1, 0), -curPhi)
-	light.transform.basis = Basis(Vector3(1, 0, 0), flashlightAngleCur)
+		rot.transform = self.get_parent().transform.rotated(Vector3(0, 1, 0), -curPhi)
+		light.transform.basis = Basis(Vector3(1, 0, 0), flashlightAngleCur)
 	
 	# Ground velocity
 	velocity.x = direction.x * speed
@@ -176,6 +190,7 @@ func _input(event):
 		if event.is_action_pressed("interact"):
 			print("Action pressed !")
 			# TODO interaction
+			currentInteractable.on_player_interact(self)
 	
 	
 
