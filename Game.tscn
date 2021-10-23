@@ -1,42 +1,44 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://concept-art/tutorial_room.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/flur_oben.obj" type="PackedScene" id=3]
 [ext_resource path="res://concept-art/milk_bottle.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://default_env.tres" type="Environment" id=5]
+[ext_resource path="res://Interactable.gd" type="Script" id=6]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 radius = 0.3
 height = 1.4
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 1, 0.482235, 0.601022 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.239876, 1.5801, 2.72443 )
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.239876, 1.5801, 2.72443 )
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.239876, 1.5801, 2.72443 )
-
-[sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.236717, 5.33572, 2.73629 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 3.23229, 5.3193, 0.265728 )
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 3.23229, 1.33105, 0.265728 )
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.193, 2, 0.623 )
 
-[sub_resource type="BoxShape" id=10]
+[sub_resource type="BoxShape" id=9]
 extents = Vector3( 10, 1, 10 )
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=10]
 extents = Vector3( 6.4359, 0.255976, 2.73516 )
 
-[sub_resource type="BoxShape" id=19]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 0.214206, 0.323331, 0.2828 )
 
 [sub_resource type="BoxShape" id=12]
@@ -51,22 +53,23 @@ extents = Vector3( 2.35621, 0.59184, 0.110453 )
 [sub_resource type="BoxShape" id=15]
 extents = Vector3( 0.126588, 0.59184, 0.623059 )
 
-[sub_resource type="PlaneMesh" id=16]
+[sub_resource type="CylinderShape" id=16]
+radius = 0.696889
+height = 2.52381
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="PlaneMesh" id=17]
+
+[sub_resource type="SpatialMaterial" id=18]
 albedo_color = Color( 1, 1, 1, 0.32549 )
 roughness = 0.0
 refraction_enabled = true
 refraction_scale = 0.0
 refraction_texture_channel = 0
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=19]
 roughness = 0.52
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.54
-
-[sub_resource type="Environment" id=1]
-background_energy = 0.0
 
 [node name="Spatial" type="Spatial"]
 
@@ -92,7 +95,7 @@ spot_angle_attenuation = 0.293526
 
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
@@ -120,61 +123,61 @@ material/3 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280068, 0.221992, 0.515836 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98244, 0.919814, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody2"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="StaticBody12" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64879, 3.80049, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody12"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody3" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00538, 1.22786, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody3"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="StaticBody4" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122354, 1.22786, -2.48057 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody4"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="StaticBody5" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122354, 1.22786, 2.4688 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody5"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="StaticBody6" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.0122354, 1.07359, -1.62472 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody6"]
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="StaticBody7" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody7"]
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="StaticBody8" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3178, 1.71494 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody8"]
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="StaticBody14" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51108, 2.8415, 0.407926 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/StaticBody14"]
-shape = SubResource( 19 )
+shape = SubResource( 11 )
 
 [node name="StaticBody13" type="StaticBody" parent="Level/Colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32792, 2.3178, -1.02449 )
@@ -204,16 +207,23 @@ shape = SubResource( 15 )
 [node name="flur_oben" parent="Level" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51, -0.748 )
 
+[node name="Interactables" type="Spatial" parent="Level"]
+
+[node name="Area" type="Area" parent="Level/Interactables"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6735, 1.10488, 0.909567 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/Interactables/Area"]
+shape = SubResource( 16 )
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 13.9247, 0, 0 )
-mesh = SubResource( 16 )
+mesh = SubResource( 17 )
 material/0 = null
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.09447, 0 )
-visible = false
+transform = Transform( 0.715729, 0.451952, 0.53242, -0.596855, -3.50718e-08, 0.802349, 0.362623, -0.892042, 0.26975, 0, 8.09447, 0 )
 light_indirect_energy = 0.0
-shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_split_1 = 0.32
 directional_shadow_split_2 = 0.308
@@ -224,12 +234,15 @@ directional_shadow_bias_split_scale = 0.12
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04111, 0.651772, 0.180237 )
 visible = false
 mesh = ExtResource( 4 )
-material/0 = SubResource( 17 )
-material/1 = SubResource( 18 )
+material/0 = SubResource( 18 )
+material/1 = SubResource( 19 )
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 8.477, 10, 7.838 )
-environment = SubResource( 1 )
+environment = ExtResource( 5 )
 projection = 1
 size = 5.0
+
+[connection signal="body_entered" from="Level/Interactables/Area" to="Level/Interactables/Area" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Level/Interactables/Area" to="Level/Interactables/Area" method="_on_Area_body_exited"]

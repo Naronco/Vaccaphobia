@@ -24,6 +24,8 @@ var flashlightAngleCur = 0
 # var a = 2
 # var b = "text"
 
+var currentInteractable = null
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -165,4 +167,22 @@ func _physics_process(delta):
 		flurOben.hide()
 	
 	
+# interactions
+func _input(event):
+	if currentInteractable != null:
+		if event.is_action_pressed("interact"):
+			print("Action pressed !")
+			# TODO interaction
 	
+	
+
+func enable_interaction(interactable: Node):
+	print("Entered interaction area of ", interactable)
+	print("Press E to interact with ", interactable) # TODO replace with proper UI
+	currentInteractable = interactable
+
+
+func disable_interaction(interactable: Node):
+	currentInteractable = null
+	print("Left interaction area of ", interactable)
+

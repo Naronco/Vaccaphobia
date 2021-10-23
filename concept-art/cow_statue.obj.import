@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cow_statue.obj-b20e4ea124c2b85e6f4053725fa2da8e.mesh"
+
+[deps]
+
+files=[ "res://.import/cow_statue.obj-b20e4ea124c2b85e6f4053725fa2da8e.mesh" ]
+
+source_file="res://concept-art/cow_statue.obj"
+dest_files=[ "res://.import/cow_statue.obj-b20e4ea124c2b85e6f4053725fa2da8e.mesh", "res://.import/cow_statue.obj-b20e4ea124c2b85e6f4053725fa2da8e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
