@@ -241,7 +241,7 @@ material/1 = SubResource( 19 )
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 8.477, 10, 7.838 )
+transform = Transform( 0.707107, -0.353553, 0.612372, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612372, 8.477, 10, 7.838 )
 environment = ExtResource( 5 )
 projection = 1
 size = 5.0
@@ -275,9 +275,8 @@ __meta__ = {
 [node name="PuzzleLayer" type="CanvasLayer" parent="MarginContainer"]
 
 [node name="PuzzleScreen" type="Control" parent="MarginContainer/PuzzleLayer"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -287,21 +286,16 @@ playerPath = NodePath("../../../Player")
 [node name="Popup" type="TextureRect" parent="MarginContainer/PuzzleLayer/PuzzleScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 40.0
-margin_top = 50.0
-margin_bottom = 10.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="InteractLabel2" type="Label" parent="MarginContainer/PuzzleLayer/PuzzleScreen"]
 anchor_left = 0.5
-anchor_top = 0.071
 anchor_right = 0.5
-anchor_bottom = 0.071
-margin_left = 136.0
+margin_left = -100.0
 margin_top = 3.46
-margin_right = 336.0
+margin_right = 100.0
 margin_bottom = 34.06
 text = "Puzzle"
 align = 1

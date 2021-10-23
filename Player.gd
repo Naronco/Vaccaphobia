@@ -8,7 +8,11 @@ export var gravity = 9.81
 
 var velocity = Vector3.ZERO
 
-export var camOffs = Vector3(10/sqrt(2), 10, 10/sqrt(2))
+# Hardcoded rotation angles, replace with values from camera node
+var _camX = -45.0*PI/180
+var _camY = 45.0*PI/180
+
+export var camOffs = Vector3(10/sqrt(2), 5.5, 10/sqrt(2))
 
 
 
