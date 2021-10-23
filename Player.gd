@@ -133,9 +133,9 @@ func _physics_process(delta):
 	
 	# Hide/show level parts
 	var tutorialRoom = get_node("/root/Spatial/Level")
-	var flurOben = get_node("/root/Spatial/FlurOben")
+	var flurOben = get_node("/root/Spatial/Level/flur_oben")
 	
-	if transform.origin.y > 2.5-1.0:
+	if transform.origin.y > 2.5-1.8:
 		flurOben.show()
 	else:
 		flurOben.hide()
