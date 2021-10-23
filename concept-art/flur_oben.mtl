@@ -1,16 +1,5 @@
 # Blender MTL File: 'flur_oben.blend'
-# Material Count: 11
-
-newmtl Material
-Ns 323.999994
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd .
+# Material Count: 13
 
 newmtl Material.001
 Ns 323.999994
@@ -42,6 +31,16 @@ Ks 0.8 0.8 0.8
 d 1
 illum 2
 
+newmtl ceiling
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.080010 0.030979 0.006196
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
 newmtl door
 Ns 323.999994
 Ka 1.000000 1.000000 1.000000
@@ -63,6 +62,17 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd fence.png
+
+newmtl floor
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd floor.png
 
 newmtl hinge
 Ns 385.429315
@@ -117,3 +127,14 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd railing_bars.png
+
+newmtl wallpaper
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd wallpaper.png
