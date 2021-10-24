@@ -14,7 +14,7 @@
 [ext_resource path="res://Inventory.gd" type="Script" id=12]
 [ext_resource path="res://eltern_raum.tscn" type="PackedScene" id=13]
 [ext_resource path="res://kitchen_unten.tscn" type="PackedScene" id=14]
-[ext_resource path="res://concept-art/outside.obj" type="PackedScene" id=15]
+[ext_resource path="res://outside.tscn" type="PackedScene" id=15]
 [ext_resource path="res://wohnzimmer_unten.tscn" type="PackedScene" id=16]
 [ext_resource path="res://flur_oben_2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://kind_raum.tscn" type="PackedScene" id=18]
@@ -134,11 +134,7 @@ shape = SubResource( 4 )
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4.65297, 0.15, -1.848 )
 shape = SubResource( 5 )
 
-[node name="outside" type="Spatial" parent="Level"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.9, 0.01, 8 )
-
-[node name="outside" parent="Level/outside" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0 )
+[node name="outside" parent="Level" instance=ExtResource( 15 )]
 
 [node name="stairs" type="MeshInstance" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712969, -0.00253487, -1.71808 )
