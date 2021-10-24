@@ -99,6 +99,7 @@ func on_player_interact(player):
 		else:
 			print("Player does not have the right key...")
 			#TODO show this on screen
+			$AudioStreamPlayer3D.play()
 
 		return
 	
