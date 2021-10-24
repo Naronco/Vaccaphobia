@@ -173,6 +173,7 @@ transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.123358,
 
 [node name="Door4" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.44496, 3.79207, 9.34413 )
+unlockItemId = 3
 
 [node name="Door5" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.25511, 3.79207, 3.93485 )
@@ -204,6 +205,7 @@ shape = SubResource( 8 )
 
 [node name="Door" parent="Level/eg" instance=ExtResource( 11 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.20502, 1.292, 0.912737 )
+unlockItemId = 4
 
 [node name="Door2" parent="Level/eg" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.19871, 1.292, 3.33097 )
@@ -213,6 +215,7 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.123988,
 
 [node name="Door4" parent="Level/eg" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -1.44725, 1.292, 9.32818 )
+unlockItemId = 5
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.715729, 0.451952, 0.53242, -0.596855, -3.50718e-08, 0.802349, 0.362623, -0.892042, 0.26975, 0, 8.09447, 0 )

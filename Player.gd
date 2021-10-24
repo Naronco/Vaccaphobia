@@ -253,6 +253,10 @@ func _hide_and_show_rooms_and_doors(rooms, doors):
 		#	tol=0.5
 		var rad=0.7+0.3
 		for door in doors:
+			#increase tolerance only if door is unlocked
+			if door.is_locked():
+				continue
+			
 			var dx=transform.origin.x-door.transform.origin.x
 			var dz=transform.origin.z-door.transform.origin.z
 			if dx*dx+dz*dz<rad*rad:

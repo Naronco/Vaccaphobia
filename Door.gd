@@ -1,9 +1,13 @@
 extends Area
 
 
-export var openCloseTime = 0.5
+export(float) var openCloseTime = 0.5
 
 var whatToDo = "open door"
+
+
+#if not zero, then door is locked and must be unlocked with the item of the given id
+export(int) var unlockItemId = 0
 
 
 # Declare member variables here. Examples:
@@ -53,6 +57,8 @@ func _process(delta):
 
 func _on_Area_body_entered(body):
 	if body.name == "Player" and not doorInUse: # hardcoded, whatever
+		if is_locked():
+			whatToDo = "unlock door"
 		body.enable_interaction(self)
 		
 	pass
@@ -71,6 +77,22 @@ func on_player_interact(player):
 	if doorInUse:
 		return
 	
+	if is_locked():
+		print("Player wants to unlock the door")
+		
+		#Hardcoded inventory
+		var inventory = get_node("/root/Spatial/MarginContainer/CanvasLayer/Inventory")
+		if inventory.contains(unlockItemId):
+			unlockItemId=0
+			whatToDo="open door"
+			player.disable_interaction(self)
+			player.enable_interaction(self)
+		else:
+			print("Player does not have the right key...")
+			#TODO show this on screen
+
+		return
+	
 	player.disable_interaction(self)
 	
 	doorInUse = true
@@ -86,5 +108,7 @@ func on_player_interact(player):
 	curOpeningAngle = lastOpeningAngle
 	timer = 0
 	
-	
-	pass
+
+func is_locked():
+	return unlockItemId!=0
+
