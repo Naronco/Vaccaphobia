@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://concept-art/flur_oben.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://concept-art/sideboard.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://concept-art/cow_statue.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://concept-art/cow_statue.png" type="Texture" id=4]
+[ext_resource path="res://concept-art/cow_statue_base.png" type="Texture" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 4 )
 
 [node name="flur_oben" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, 2.51, -0.758 )
@@ -29,4 +39,14 @@ material/18 = null
 material/19 = null
 material/20 = null
 material/21 = null
-material/22 = null
+
+[node name="sideboard" type="MeshInstance" parent="flur_oben"]
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 3.87526, 2.38419e-07, -1.26072 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="cow_statue" type="MeshInstance" parent="."]
+transform = Transform( 0.357521, 0, -1.33429, 0, 1.38136, 0, 1.33429, 0, 0.357521, 3.87463, 0.66, -1.30217 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

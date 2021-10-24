@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/cow_statue_base.png-55b850d23e8b89ba28f4b7e218f93407.s3tc.stex"
-path.etc2="res://.import/cow_statue_base.png-55b850d23e8b89ba28f4b7e218f93407.etc2.stex"
+path.s3tc="res://.import/cow_head2.png-c19cdd8ee7cddd4c0ddd94f2cd3f8c5a.s3tc.stex"
+path.etc2="res://.import/cow_head2.png-c19cdd8ee7cddd4c0ddd94f2cd3f8c5a.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://concept-art/cow_statue_base.png"
-dest_files=[ "res://.import/cow_statue_base.png-55b850d23e8b89ba28f4b7e218f93407.s3tc.stex", "res://.import/cow_statue_base.png-55b850d23e8b89ba28f4b7e218f93407.etc2.stex" ]
+source_file="res://concept-art/cow_head2.png"
+dest_files=[ "res://.import/cow_head2.png-c19cdd8ee7cddd4c0ddd94f2cd3f8c5a.s3tc.stex", "res://.import/cow_head2.png-c19cdd8ee7cddd4c0ddd94f2cd3f8c5a.etc2.stex" ]
 
 [params]
 

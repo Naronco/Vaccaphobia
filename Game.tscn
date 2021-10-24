@@ -45,14 +45,14 @@ extents = Vector3( 0.193, 3.3951, 0.479123 )
 radius = 0.696889
 height = 2.52381
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=8]
 albedo_color = Color( 1, 1, 1, 0.32549 )
 roughness = 0.0
 refraction_enabled = true
 refraction_scale = 0.0
 refraction_texture_channel = 0
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=9]
 roughness = 0.52
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.54
@@ -149,7 +149,7 @@ shape = SubResource( 6 )
 [node name="1og" type="Spatial" parent="Level"]
 
 [node name="eltern_raum" parent="Level/1og" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.834, 2.5, -4.454 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82631, 2.5, -4.43693 )
 
 [node name="flur_oben_2" parent="Level/1og" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77558, 2.49647, -1.39012 )
@@ -175,7 +175,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.04834
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.44496, 3.79207, 9.34413 )
 
 [node name="Door5" parent="Level/1og" instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.71155, 3.79207, 3.93485 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.25511, 3.79207, 3.93485 )
 
 [node name="Door6" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.43991, 3.79207, 0.807117 )
@@ -222,8 +222,8 @@ directional_shadow_bias_split_scale = 0.12
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04111, 0.651772, 0.180237 )
 visible = false
 mesh = ExtResource( 4 )
-material/0 = SubResource( 9 )
-material/1 = SubResource( 10 )
+material/0 = SubResource( 8 )
+material/1 = SubResource( 9 )
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
