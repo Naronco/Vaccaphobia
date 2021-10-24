@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://concept-art/abstellraum.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://concept-art/shelf_small.obj" type="ArrayMesh" id=3]
+
+[node name="abstellraum" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130045, 2.5, 8.98723 )
+
+[node name="abstellraum" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="shelf_small" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -4.37114e-08, 0, 1, 0, 4.37114e-08, 0, -1, 0.710188, -5.76973e-05, -0.0346699 )
+mesh = ExtResource( 3 )
+material/0 = null
