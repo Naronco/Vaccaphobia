@@ -164,13 +164,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77558, 2.49647, -1.39012 )
 [node name="flur_oben" parent="Level/1og" instance=ExtResource( 3 )]
 
 [node name="Door" parent="Level/1og" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6735, 3.79207, -0.825436 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.82616, 3.79207, -0.756706 )
 
 [node name="Door2" parent="Level/1og" instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.11783, 3.79207, 0.701706 )
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -1.05596, 3.79207, 0.8408 )
 
 [node name="Door3" parent="Level/1og" instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0483437, 3.79207, 7.90919 )
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.123358, 3.79207, 7.99424 )
 
 [node name="Door4" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.44496, 3.79207, 9.34413 )
