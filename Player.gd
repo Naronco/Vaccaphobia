@@ -1,6 +1,7 @@
 extends KinematicBody
 
 
+export (PackedScene) var Door
 
 # How fast the player moves in meters per second.
 export var speed = 2
@@ -209,6 +210,10 @@ func _physics_process(delta):
 	var og1list = [eltern_raum,flur_oben_2,kind_raum,abstellraum,wohnzimmer,flur_oben]
 	var eglist = [kitchen_unten,wohnzimmer_unten,flur_unten]
 	
+	#now get all doors
+	var og1doors = _get_doors(og1)
+	var egdoors = _get_doors(eg)
+	
 	var isInOg1 = true
 	
 	if transform.origin.y > 2.5-1.8:
@@ -221,12 +226,15 @@ func _physics_process(delta):
 		isInOg1 = false
 	
 	if isInOg1:
-		_hide_and_show_rooms(og1list)
+		_hide_and_show_rooms_and_doors(og1list, og1doors)
 	else:
-		_hide_and_show_rooms(eglist)
+		_hide_and_show_rooms_and_doors(eglist, egdoors)
 
 
-func _hide_and_show_rooms(rooms):
+func _hide_and_show_rooms_and_doors(rooms, doors):
+	for door in doors:
+		door.hide()
+	
 	for room in rooms:
 		var bb=_get_aabb_of_node(room)
 		if bb == null:
@@ -240,6 +248,11 @@ func _hide_and_show_rooms(rooms):
 	
 		if inx and iny:
 			room.show()
+			
+			#find all connected doors, show them
+			for door in doors:
+				if _connects_to_rooms_aabb(door, bb):
+					door.show()
 
 
 func _get_aabb_of_node(node):
@@ -259,6 +272,20 @@ func _get_aabb_of_node(node):
 			if aabb.end.z>res.end.z:
 				res.end.z=aabb.end.z
 	return res
+
+
+func _get_doors(node):
+	var doors = []
+	for n in node.get_children():
+		if n.name.begins_with("Door"):
+			doors.append(n)
+	return doors
+
+func _connects_to_rooms_aabb(door, bb):
+	var tol=1
+	var inx=door.transform.origin.x>=bb.position.x-tol and door.transform.origin.x<bb.end.x+tol
+	var iny=door.transform.origin.z>=bb.position.z-tol and door.transform.origin.z<bb.end.z+tol
+	return inx and iny
 
 	
 # interactions
