@@ -1,15 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://concept-art/stromkasten.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/flur_unten.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/tutorial_tisch.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://concept-art/stairs.obj" type="ArrayMesh" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0.393087, 0.601022 )
-
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.193, 3.3951, 0.479123 )
 
 [node name="flur_unten" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29117, 0, -1.22228 )
@@ -37,15 +33,3 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="tutorial_tisch/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00478935, 0.221992, 0.0134476 )
 shape = SubResource( 1 )
-
-[node name="stairs" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36517, -0.023, -0.54172 )
-mesh = ExtResource( 4 )
-material/0 = null
-
-[node name="Stairs" type="StaticBody" parent="stairs"]
-transform = Transform( 0.478079, -0.878317, 0, 0.878317, 0.478079, 0, 0, 0, 1, 0.83009, 1.09659, 0.13928 )
-
-[node name="CollisionShape" type="CollisionShape" parent="stairs/Stairs"]
-transform = Transform( 0.999999, -1.49012e-07, 0, 1.49012e-07, 0.999999, 0, 0, 0, 1, -0.288529, -0.202769, -0.118851 )
-shape = SubResource( 2 )

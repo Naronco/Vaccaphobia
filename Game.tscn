@@ -1,8 +1,8 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://flur_unten.tscn" type="PackedScene" id=2]
-[ext_resource path="res://concept-art/flur_oben.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://flur_oben.tscn" type="PackedScene" id=3]
 [ext_resource path="res://concept-art/milk_bottle.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://default_env.tres" type="Environment" id=5]
 [ext_resource path="res://Interactable.gd" type="Script" id=6]
@@ -20,28 +20,41 @@
 [ext_resource path="res://kind_raum.tscn" type="PackedScene" id=18]
 [ext_resource path="res://abstellraum.tscn" type="PackedScene" id=19]
 [ext_resource path="res://wohnzimmer.tscn" type="PackedScene" id=20]
+[ext_resource path="res://concept-art/stairs.obj" type="ArrayMesh" id=21]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
 height = 1.4
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 17.9118, 1, 13.604 )
+extents = Vector3( 25.063, 1, 18.382 )
 
-[sub_resource type="CylinderShape" id=3]
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 4.497, 0.25, 6.08 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 10.365, 0.25, 4.545 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1.294, 0.1, 1.486 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.193, 3.3951, 0.479123 )
+
+[sub_resource type="CylinderShape" id=7]
 radius = 0.696889
 height = 2.52381
 
-[sub_resource type="PlaneMesh" id=4]
+[sub_resource type="PlaneMesh" id=8]
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 1, 1, 1, 0.32549 )
 roughness = 0.0
 refraction_enabled = true
 refraction_scale = 0.0
 refraction_texture_channel = 0
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=10]
 roughness = 0.52
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.54
@@ -100,24 +113,29 @@ region_rect = Rect2( 283, 0, 283, 640 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/Worldground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6567, 0, 0 )
 shape = SubResource( 2 )
 
-[node name="Interactables" type="Spatial" parent="Level"]
+[node name="OG1Ground" type="StaticBody" parent="Level/Colliders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0 )
 
-[node name="FuseBox" type="Area" parent="Level/Interactables"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50567, 1.10488, -0.0818948 )
-script = ExtResource( 6 )
-puzzleScreenPath = NodePath("../../../MarginContainer/PuzzleLayer/PuzzleScreen")
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/Interactables/FuseBox"]
+[node name="CollisionShape" type="CollisionShape" parent="Level/Colliders/OG1Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.84417 )
 shape = SubResource( 3 )
 
-[node name="Door" parent="Level/Interactables" instance=ExtResource( 11 )]
+[node name="CollisionShape2" type="CollisionShape" parent="Level/Colliders/OG1Ground"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.78839, 0, -4.58742 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Level/Colliders/OG1Ground"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4.65297, 0.15, -1.848 )
+shape = SubResource( 5 )
 
 [node name="outside" type="Spatial" parent="Level"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.9, 0.01, 8 )
 
 [node name="outside" type="MeshInstance" parent="Level/outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00521708, 0.00904512, 0.000321388 )
 mesh = ExtResource( 15 )
 material/0 = null
 material/1 = null
@@ -141,11 +159,25 @@ material/18 = null
 material/19 = null
 material/20 = null
 
+[node name="stairs" type="MeshInstance" parent="Level"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712969, -0.00253487, -1.71808 )
+mesh = ExtResource( 21 )
+material/0 = null
+
+[node name="Stairs" type="StaticBody" parent="Level/stairs"]
+transform = Transform( 0.478079, -0.878317, 0, 0.878317, 0.478079, 0, 0, 0, 1, 0.83009, 1.09659, 0.13928 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/stairs/Stairs"]
+transform = Transform( 0.999999, -1.49012e-07, 0, 1.49012e-07, 0.999999, 0, 0, 0, 1, -0.288529, -0.202769, -0.118851 )
+shape = SubResource( 6 )
+
 [node name="1og" type="Spatial" parent="Level"]
 
 [node name="eltern_raum" parent="Level/1og" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.834, 2.5, -4.454 )
 
 [node name="flur_oben_2" parent="Level/1og" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77558, 2.49647, -1.39012 )
 
 [node name="kind_raum" parent="Level/1og" instance=ExtResource( 18 )]
 
@@ -153,46 +185,58 @@ material/20 = null
 
 [node name="wohnzimmer" parent="Level/1og" instance=ExtResource( 20 )]
 
-[node name="flur_oben" type="Spatial" parent="Level/1og"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, 2.51, -0.758 )
+[node name="flur_oben" parent="Level/1og" instance=ExtResource( 3 )]
 
-[node name="flur_oben" type="MeshInstance" parent="Level/1og/flur_oben"]
-mesh = ExtResource( 3 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
-material/4 = null
-material/5 = null
-material/6 = null
-material/7 = null
-material/8 = null
-material/9 = null
-material/10 = null
-material/11 = null
-material/12 = null
-material/13 = null
-material/14 = null
-material/15 = null
-material/16 = null
-material/17 = null
-material/18 = null
-material/19 = null
-material/20 = null
-material/21 = null
-material/22 = null
+[node name="Door" parent="Level/1og" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6735, 3.79207, -0.825436 )
+
+[node name="Door2" parent="Level/1og" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.11783, 3.79207, 0.701706 )
+
+[node name="Door3" parent="Level/1og" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0483437, 3.79207, 7.90919 )
+
+[node name="Door4" parent="Level/1og" instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.44496, 3.79207, 9.34413 )
+
+[node name="Door5" parent="Level/1og" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.71155, 3.79207, 3.93485 )
+
+[node name="Door6" parent="Level/1og" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.43991, 3.79207, 0.807117 )
+
+[node name="Door7" parent="Level/1og" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.38087, 3.79207, -2.47926 )
 
 [node name="eg" type="Spatial" parent="Level"]
 
 [node name="kitchen_unten" parent="Level/eg" instance=ExtResource( 14 )]
 
 [node name="wohnzimmer_unten" parent="Level/eg" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.763433, 0, 4.34843 )
 
 [node name="flur_unten" parent="Level/eg" instance=ExtResource( 2 )]
 
+[node name="FuseBox" type="Area" parent="Level/eg"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50567, 1.10488, -0.0818948 )
+script = ExtResource( 6 )
+puzzleScreenPath = NodePath("../../../MarginContainer/PuzzleLayer/PuzzleScreen")
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/eg/FuseBox"]
+shape = SubResource( 7 )
+
+[node name="Door" parent="Level/eg" instance=ExtResource( 11 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.20502, 1.292, 0.912737 )
+
+[node name="Door2" parent="Level/eg" instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.19871, 1.292, 3.33097 )
+
+[node name="Door3" parent="Level/eg" instance=ExtResource( 11 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.421497, 1.292, 7.96589 )
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 16.2798, 0, 0 )
-mesh = SubResource( 4 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -208,8 +252,8 @@ directional_shadow_bias_split_scale = 0.12
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04111, 0.651772, 0.180237 )
 visible = false
 mesh = ExtResource( 4 )
-material/0 = SubResource( 5 )
-material/1 = SubResource( 6 )
+material/0 = SubResource( 9 )
+material/1 = SubResource( 10 )
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
@@ -346,6 +390,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="body_entered" from="Level/Interactables/FuseBox" to="Level/Interactables/FuseBox" method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Level/Interactables/FuseBox" to="Level/Interactables/FuseBox" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_exited"]
 [connection signal="gui_input" from="MarginContainer/CanvasLayer/Inventory" to="MarginContainer/CanvasLayer/Inventory" method="_on_Inventory_gui_input"]
