@@ -235,6 +235,8 @@ func _hide_and_show_rooms_and_doors(rooms, doors):
 	for door in doors:
 		door.hide()
 	
+	var outside=true
+	
 	for room in rooms:
 		var bb=_get_aabb_of_node(room)
 		if bb == null:
@@ -254,6 +256,15 @@ func _hide_and_show_rooms_and_doors(rooms, doors):
 			for door in doors:
 				if _connects_to_rooms_aabb(door, bb):
 					door.show()
+			
+			outside=false
+	
+	#if outside, show all rooms and doors
+	if outside:
+		for door in doors:
+			door.show()
+		for room in rooms:
+			room.show()
 
 
 func _get_aabb_of_node(node):
