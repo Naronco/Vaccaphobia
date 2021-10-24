@@ -2,6 +2,8 @@ extends Control
 
 export var maxSlots=6
 
+var items = [0,0,0,0,0,0]
+
 
 # Declare member variables here. Examples:
 # var a = 2

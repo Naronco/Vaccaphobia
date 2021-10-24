@@ -40,24 +40,24 @@ extents = Vector3( 10.365, 0.25, 4.545 )
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 1.294, 0.1, 1.486 )
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 23 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.193, 3.3951, 0.479123 )
 
-[sub_resource type="CylinderShape" id=7]
+[sub_resource type="CylinderShape" id=8]
 radius = 0.696889
 height = 2.52381
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 1, 1, 1, 0.32549 )
 roughness = 0.0
 refraction_enabled = true
 refraction_scale = 0.0
 refraction_texture_channel = 0
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=10]
 roughness = 0.52
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.54
@@ -139,14 +139,14 @@ shape = SubResource( 5 )
 [node name="stairs" type="MeshInstance" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712969, -0.00253487, -1.71808 )
 mesh = ExtResource( 21 )
-material/0 = SubResource( 10 )
+material/0 = SubResource( 6 )
 
 [node name="Stairs" type="StaticBody" parent="Level/stairs"]
 transform = Transform( 0.478079, -0.878317, 0, 0.878317, 0.478079, 0, 0, 0, 1, 0.83009, 1.09659, 0.13928 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/stairs/Stairs"]
 transform = Transform( 0.999999, -1.49012e-07, 0, 1.49012e-07, 0.999999, 0, 0, 0, 1, -0.288529, -0.202769, -0.118851 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="1og" type="Spatial" parent="Level"]
 
@@ -200,10 +200,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0, 8.987 )
 [node name="FuseBox" type="Area" parent="Level/eg"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50567, 1.10488, -0.0818948 )
 script = ExtResource( 6 )
-puzzleScreenPath = NodePath("../../../MarginContainer/PuzzleLayer/PuzzleScreen")
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/eg/FuseBox"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Door" parent="Level/eg" instance=ExtResource( 11 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.20502, 1.292, 0.912737 )
@@ -230,8 +229,8 @@ directional_shadow_bias_split_scale = 0.12
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04111, 0.651772, 0.180237 )
 visible = false
 mesh = ExtResource( 4 )
-material/0 = SubResource( 8 )
-material/1 = SubResource( 9 )
+material/0 = SubResource( 9 )
+material/1 = SubResource( 10 )
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
@@ -246,6 +245,10 @@ margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PuzzleLayer" type="CanvasLayer" parent="MarginContainer"]
+
+[node name="PuzzleScreen" parent="MarginContainer/PuzzleLayer" instance=ExtResource( 7 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer"]
 
@@ -334,10 +337,6 @@ texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="PuzzleLayer" type="CanvasLayer" parent="MarginContainer"]
-
-[node name="PuzzleScreen" parent="MarginContainer/PuzzleLayer" instance=ExtResource( 7 )]
 
 [connection signal="body_entered" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_exited"]

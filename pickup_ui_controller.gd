@@ -1,9 +1,6 @@
 extends Control
 
 
-export(NodePath) var playerPath
-
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,16 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-# interactions
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		for n in self.get_children():
-			n.hide()
-		
-		# Unfreeze player
-		if playerPath != null:
-			var player = get_node(playerPath)
-			player.enable_movement()
-	
-	

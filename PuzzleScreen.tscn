@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://PuzzleScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/gewinde_ding.png" type="Texture" id=2]
+[ext_resource path="res://concept-art/Rätsel PNG/Schrank Wohnzimmer/Ohne Knauf.png" type="Texture" id=3]
+[ext_resource path="res://concept-art/Rätsel PNG/Kommode in Flur oben/Schublade auf/Kommode mit Schlüssel.png" type="Texture" id=4]
+[ext_resource path="res://concept-art/Rätsel PNG/Beistelltisch/Beistelltisch ohne Ding.png" type="Texture" id=5]
+[ext_resource path="res://concept-art/Rätsel PNG/Kommode in Flur oben/Schublade auf/Kommode ohne Schlüssel.png" type="Texture" id=6]
+[ext_resource path="res://concept-art/Rätsel PNG/Kommode in Flur oben/Schublade zu/Kommode ohne Knauf.png" type="Texture" id=7]
+[ext_resource path="res://concept-art/Rätsel PNG/Kommode in Flur oben/Schublade zu/Kommode mit Knauf.png" type="Texture" id=8]
+[ext_resource path="res://assets/knauf.png" type="Texture" id=9]
+[ext_resource path="res://concept-art/Rätsel PNG/Schublade auf und zu/Schublade zu.png" type="Texture" id=10]
+[ext_resource path="res://concept-art/Rätsel PNG/Schublade auf und zu/Schublade offen.png" type="Texture" id=11]
+[ext_resource path="res://pickup_ui_controller.gd" type="Script" id=12]
+[ext_resource path="res://remove_target.gd" type="Script" id=13]
+[ext_resource path="res://concept-art/Rätsel PNG/Kommode in Flur oben/Schublade zu/Kommode ohne Knauf mit Ding.png" type="Texture" id=14]
 
 [node name="PuzzleScreen" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -12,23 +24,231 @@ __meta__ = {
 }
 playerPath = NodePath("../../../Player")
 
-[node name="Popup" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="bookshelf" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InteractLabel2" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -100.0
-margin_top = 3.46
-margin_right = 100.0
-margin_bottom = 34.06
-text = "Puzzle"
-align = 1
-valign = 1
+[node name="bg" type="Sprite" parent="bookshelf"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 3 )
+
+[node name="clickables" type="Container" parent="bookshelf"]
+margin_left = 150.0
+margin_top = 11.0
+margin_right = 357.0
+margin_bottom = 294.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="item" type="Sprite" parent="bookshelf"]
+position = Vector2( 317.814, 203.944 )
+texture = ExtResource( 9 )
+
+[node name="remove_target" type="Container" parent="bookshelf/item"]
+margin_left = -13.0
+margin_top = -13.0
+margin_right = 13.0
+margin_bottom = 13.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+addToInventory = true
+inventoryId = 2
+
+[node name="flur_drawer" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 100.703, 69.5455 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="open_empty" type="Sprite" parent="flur_drawer"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 6 )
+
+[node name="clickables" type="Container" parent="flur_drawer/open_empty"]
+margin_left = -113.0
+margin_top = -122.0
+margin_right = 109.0
+margin_bottom = 109.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="open_key" type="Sprite" parent="flur_drawer"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 4 )
+
+[node name="clickables" type="Container" parent="flur_drawer/open_key"]
+margin_left = -113.0
+margin_top = -122.0
+margin_right = 109.0
+margin_bottom = 109.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="remove_target" type="Container" parent="flur_drawer/open_key"]
+margin_left = -43.0
+margin_top = 5.0
+margin_right = 3.0
+margin_bottom = 34.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+addToInventory = true
+inventoryId = 3
+
+[node name="knob" type="Sprite" parent="flur_drawer"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 8 )
+
+[node name="clickables" type="Container" parent="flur_drawer/knob"]
+margin_left = -113.0
+margin_top = -122.0
+margin_right = 109.0
+margin_bottom = 109.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="remove_target" type="Container" parent="flur_drawer/knob"]
+margin_left = -81.0
+margin_top = -6.0
+margin_right = 77.0
+margin_bottom = 55.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="no_knob_but_ding" type="Sprite" parent="flur_drawer"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 14 )
+
+[node name="clickables" type="Container" parent="flur_drawer/no_knob_but_ding"]
+margin_left = -113.0
+margin_top = -122.0
+margin_right = 109.0
+margin_bottom = 109.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="remove_target" type="Container" parent="flur_drawer/no_knob_but_ding"]
+margin_left = -19.0
+margin_top = -1.0
+margin_right = 11.0
+margin_bottom = 30.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+needsInventory = true
+consumesInventory = true
+inventoryId = 2
+
+[node name="no_knob2" type="Sprite" parent="flur_drawer"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 7 )
+
+[node name="clickables" type="Container" parent="flur_drawer/no_knob2"]
+margin_left = -113.0
+margin_top = -122.0
+margin_right = 109.0
+margin_bottom = 109.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="remove_target" type="Container" parent="flur_drawer/no_knob2"]
+margin_left = -19.0
+margin_top = -1.0
+margin_right = 11.0
+margin_bottom = 30.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+needsInventory = true
+consumesInventory = true
+inventoryId = 1
+
+[node name="wohnzimmer_desk" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Sprite" parent="wohnzimmer_desk"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 5 )
+
+[node name="clickables" type="Container" parent="wohnzimmer_desk"]
+margin_left = 92.0
+margin_top = 76.0
+margin_right = 379.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="item" type="Sprite" parent="wohnzimmer_desk"]
+position = Vector2( 275.436, 111.241 )
+texture = ExtResource( 2 )
+
+[node name="remove_target" type="Container" parent="wohnzimmer_desk/item"]
+margin_left = -19.0
+margin_top = -13.0
+margin_right = 18.0
+margin_bottom = 13.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+addToInventory = true
+inventoryId = 1
+
+[node name="4x4 drawers" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="4x4 drawers"]
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0.415686, 0.415686, 0.415686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Schublade" type="Node2D" parent="4x4 drawers"]
+
+[node name="Schublade offen" type="Sprite" parent="4x4 drawers/Schublade"]
+position = Vector2( 0, 34 )
+texture = ExtResource( 11 )
+
+[node name="Schublade zu" type="Sprite" parent="4x4 drawers/Schublade"]
+texture = ExtResource( 10 )
+
+[connection signal="gui_input" from="bookshelf/item/remove_target" to="bookshelf/item/remove_target" method="_on_remove_target_gui_input"]
+[connection signal="gui_input" from="flur_drawer/open_key/remove_target" to="flur_drawer/open_key/remove_target" method="_on_remove_target_gui_input"]
+[connection signal="gui_input" from="flur_drawer/knob/remove_target" to="flur_drawer/knob/remove_target" method="_on_remove_target_gui_input"]
+[connection signal="gui_input" from="flur_drawer/no_knob_but_ding/remove_target" to="flur_drawer/no_knob_but_ding/remove_target" method="_on_remove_target_gui_input"]
+[connection signal="gui_input" from="flur_drawer/no_knob2/remove_target" to="flur_drawer/no_knob2/remove_target" method="_on_remove_target_gui_input"]
+[connection signal="gui_input" from="wohnzimmer_desk/item/remove_target" to="wohnzimmer_desk/item/remove_target" method="_on_remove_target_gui_input"]

@@ -4,7 +4,7 @@ extends Area
 export var whatToDo = "open fuse box"
 
 
-export(NodePath) var puzzleScreenPath
+export(String) var puzzleScreenPath
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -43,3 +43,4 @@ func on_player_interact(player):
 	puzzleScreen.show()
 	
 	pass
+

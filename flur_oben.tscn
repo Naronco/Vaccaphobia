@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://concept-art/flur_oben.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/sideboard.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/cow_statue.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://concept-art/cow_statue.png" type="Texture" id=4]
 [ext_resource path="res://concept-art/cow_statue_base.png" type="Texture" id=5]
+[ext_resource path="res://Interactable.gd" type="Script" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 5 )
@@ -15,23 +16,26 @@ albedo_texture = ExtResource( 4 )
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 3.67597, 1.25821, 0.133643 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.40098, 1.25821, 0.133643 )
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=12]
 extents = Vector3( 0.114669, 1.25821, 0.630417 )
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=13]
 extents = Vector3( 0.279598, 1.25821, 0.218094 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.107641, 1.25821, 1.61822 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.107641, 1.25821, 0.595708 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=9]
 extents = Vector3( 0.107641, 1.25821, 0.63022 )
+
+[sub_resource type="CylinderShape" id=10]
+radius = 0.926992
 
 [node name="flur_oben" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, 2.51, -0.758 )
@@ -82,30 +86,43 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="colliders/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.928507, 1.24415, -0.427805 )
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="colliders/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2432, 1.24415, -0.92828 )
-shape = SubResource( 8 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="colliders/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87164, 1.24415, -1.28089 )
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 
 [node name="StaticBody2" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41176, 1.24415, -0.00381696 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="StaticBody3" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7477, 1.24415, -1.03153 )
-shape = SubResource( 5 )
+shape = SubResource( 8 )
 
 [node name="StaticBody4" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7477, 1.24415, 0.989381 )
-shape = SubResource( 6 )
+shape = SubResource( 9 )
+
+[node name="PuzzleTrigger" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86794, 0.203612, -1.2589 )
+script = ExtResource( 6 )
+whatToDo = "inspect"
+puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/flur_drawer"
+
+[node name="CollisionShape" type="CollisionShape" parent="PuzzleTrigger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 10 )
+
+[connection signal="body_entered" from="PuzzleTrigger" to="PuzzleTrigger" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="PuzzleTrigger" to="PuzzleTrigger" method="_on_Area_body_exited"]
