@@ -6,7 +6,7 @@
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.696889
-height = 2.52381
+height = 1.99729
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.0620818, 1, 0.402006 )
@@ -16,6 +16,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6735, 3.79207, -0.944281 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265917, 0 )
 shape = SubResource( 1 )
 
 [node name="doorframe" type="MeshInstance" parent="."]
