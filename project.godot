@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Spooky2DJam"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Intro.tscn"
 config/icon="res://icon.png"
 
 [display]

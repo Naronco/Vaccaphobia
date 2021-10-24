@@ -8,46 +8,46 @@
 extents = Vector3( 0.194273, 2.51006, 6.0022 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.194273, 2.51006, 1.07931 )
-
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 2.18813, 2.51006, 0.20253 )
-
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 0.143015, 2.51006, 0.903082 )
-
-[sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.194273, 2.51006, 7.20796 )
-
-[sub_resource type="BoxShape" id=6]
 extents = Vector3( 1.48545, 2.51006, 0.196268 )
 
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 4.2254, 2.51006, 0.191352 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.194273, 2.51006, 1.07931 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.18813, 2.51006, 0.20253 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.143015, 2.51006, 0.903082 )
+
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 0.758047, 1.11267, 0.44402 )
+extents = Vector3( 0.194273, 2.51006, 7.20796 )
 
 [sub_resource type="BoxShape" id=8]
-extents = Vector3( 0.711361, 1.11267, 0.188073 )
+extents = Vector3( 0.758047, 1.11267, 0.44402 )
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 0.150673, 1.11267, 2.01031 )
+extents = Vector3( 0.711361, 1.11267, 0.188073 )
 
 [sub_resource type="BoxShape" id=10]
-extents = Vector3( 2.11308, 1.11267, 0.19417 )
+extents = Vector3( 0.150673, 1.11267, 2.01031 )
 
 [sub_resource type="BoxShape" id=11]
-extents = Vector3( 0.168956, 1.11267, 1.40087 )
+extents = Vector3( 2.11308, 1.11267, 0.19417 )
 
 [sub_resource type="BoxShape" id=12]
-extents = Vector3( 0.168956, 1.11267, 0.362585 )
+extents = Vector3( 0.168956, 1.11267, 1.40087 )
 
 [sub_resource type="BoxShape" id=13]
 extents = Vector3( 0.168956, 1.11267, 0.362585 )
 
 [sub_resource type="BoxShape" id=14]
-extents = Vector3( 0.168956, 1.11267, 0.431535 )
+extents = Vector3( 0.168956, 1.11267, 0.362585 )
 
 [sub_resource type="BoxShape" id=15]
-extents = Vector3( 4.2254, 2.51006, 0.191352 )
+extents = Vector3( 0.168956, 1.11267, 0.431535 )
 
 [sub_resource type="CylinderShape" id=16]
 radius = 0.616848

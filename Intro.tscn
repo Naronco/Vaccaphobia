@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://concept-art/Andere Krita Sachen/Start Szene/Sz 3 rueckkehr.png" type="Texture" id=1]
+[ext_resource path="res://concept-art/Andere Krita Sachen/Start Szene/Sz 1 Eltern winken.png" type="Texture" id=2]
+[ext_resource path="res://Intro.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="Image1" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image2" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Image2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "One week later..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image3" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
