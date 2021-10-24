@@ -1,5 +1,5 @@
 # Blender MTL File: 'outside.blend'
-# Material Count: 7
+# Material Count: 8
 
 newmtl balcony_fence
 Ns 225.000000
@@ -67,6 +67,17 @@ d 1.000000
 illum 1
 map_Kd grass_billboard.png
 map_d grass_billboard.png
+
+newmtl hedge
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd hedge.png
 
 newmtl tree
 Ns 225.000000
