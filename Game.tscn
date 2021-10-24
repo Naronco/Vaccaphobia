@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://flur_unten.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Interactable.gd" type="Script" id=6]
 [ext_resource path="res://PuzzleScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/slot.png" type="Texture" id=8]
+[ext_resource path="res://HideOutsideArea.gd" type="Script" id=9]
 [ext_resource path="res://concept-art/character_sheet.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Inventory.gd" type="Script" id=12]
@@ -44,6 +45,9 @@ albedo_texture = ExtResource( 23 )
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.193, 3.3951, 0.479123 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 4.23229, 2.50348, 4.67088 )
 
 [sub_resource type="CylinderShape" id=8]
 radius = 0.696889
@@ -183,6 +187,14 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.4399
 
 [node name="Door7" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.38087, 3.79207, -2.47926 )
+
+[node name="HideOutsideArea" type="Area" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04659, 0, -0.818275 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/1og/HideOutsideArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.01561, 0 )
+shape = SubResource( 11 )
 
 [node name="eg" type="Spatial" parent="Level"]
 
@@ -373,6 +385,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="body_entered" from="Level/1og/HideOutsideArea" to="Level/1og/HideOutsideArea" method="_on_HideOutsideArea_body_entered"]
+[connection signal="body_exited" from="Level/1og/HideOutsideArea" to="Level/1og/HideOutsideArea" method="_on_HideOutsideArea_body_exited"]
 [connection signal="body_entered" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_exited"]
 [connection signal="gui_input" from="MarginContainer/CanvasLayer/Inventory" to="MarginContainer/CanvasLayer/Inventory" method="_on_Inventory_gui_input"]
