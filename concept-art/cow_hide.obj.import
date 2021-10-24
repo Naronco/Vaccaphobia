@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cow_hide.obj-2dc1237fb6509399a76dc8f1f68541f9.mesh"
+
+[deps]
+
+files=[ "res://.import/cow_hide.obj-2dc1237fb6509399a76dc8f1f68541f9.mesh" ]
+
+source_file="res://concept-art/cow_hide.obj"
+dest_files=[ "res://.import/cow_hide.obj-2dc1237fb6509399a76dc8f1f68541f9.mesh", "res://.import/cow_hide.obj-2dc1237fb6509399a76dc8f1f68541f9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
