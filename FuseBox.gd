@@ -65,7 +65,6 @@ func on_player_interact(player):
 		
 		interactedOnce=true
 	else:
-		#TODO play sound "why should I do this?"
-		pass
+		$AudioStreamPlayer3D.play()
 
 
