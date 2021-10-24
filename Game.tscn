@@ -45,7 +45,7 @@ extents = Vector3( 1.294, 0.1, 1.486 )
 albedo_texture = ExtResource( 23 )
 
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 0.193, 3.3951, 0.479123 )
+extents = Vector3( 1.16252, 3.3951, 0.479123 )
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 4.23229, 2.50348, 4.67088 )
@@ -147,7 +147,7 @@ material/0 = SubResource( 6 )
 transform = Transform( 0.478079, -0.878317, 0, 0.878317, 0.478079, 0, 0, 0, 1, 0.83009, 1.09659, 0.13928 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/stairs/Stairs"]
-transform = Transform( 0.999999, -1.49012e-07, 0, 1.49012e-07, 0.999999, 0, 0, 0, 1, -0.288529, -0.202769, -0.118851 )
+transform = Transform( 0.999999, -1.49012e-07, 0, 1.49012e-07, 0.999999, 0, 0, 0, 1, -1.28432, -0.168445, -0.118851 )
 shape = SubResource( 7 )
 
 [node name="1og" type="Spatial" parent="Level"]
