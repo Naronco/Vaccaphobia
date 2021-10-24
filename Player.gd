@@ -193,13 +193,73 @@ func _physics_process(delta):
 	var og1 = get_node("/root/Spatial/Level/1og")
 	var eg = get_node("/root/Spatial/Level/eg")
 	
+	#og1
+	var eltern_raum = get_node("/root/Spatial/Level/1og/eltern_raum")
+	var flur_oben_2 = get_node("/root/Spatial/Level/1og/flur_oben_2")
+	var kind_raum = get_node("/root/Spatial/Level/1og/kind_raum")
+	var abstellraum = get_node("/root/Spatial/Level/1og/abstellraum")
+	var wohnzimmer = get_node("/root/Spatial/Level/1og/wohnzimmer")
+	var flur_oben = get_node("/root/Spatial/Level/1og/flur_oben")
+	
+	#eg
+	var kitchen_unten = get_node("/root/Spatial/Level/eg/kitchen_unten")
+	var wohnzimmer_unten = get_node("/root/Spatial/Level/eg/wohnzimmer_unten")
+	var flur_unten = get_node("/root/Spatial/Level/eg/flur_unten")
+	
+	var og1list = [eltern_raum,flur_oben_2,kind_raum,abstellraum,wohnzimmer,flur_oben]
+	var eglist = [kitchen_unten,wohnzimmer_unten,flur_unten]
+	
+	var isInOg1 = true
+	
 	if transform.origin.y > 2.5-1.8:
 		og1.show()
 		eg.hide()
+		isInOg1 = true
 	else:
 		og1.hide()
 		eg.show()
+		isInOg1 = false
 	
+	if isInOg1:
+		_hide_and_show_rooms(og1list)
+	else:
+		_hide_and_show_rooms(eglist)
+
+
+func _hide_and_show_rooms(rooms):
+	for room in rooms:
+		var bb=_get_aabb_of_node(room)
+		if bb == null:
+			continue
+	
+		#player might be in this room
+		room.hide()
+
+		var inx=transform.origin.x>=bb.position.x and transform.origin.x<bb.end.x
+		var iny=transform.origin.z>=bb.position.z and transform.origin.z<bb.end.z
+	
+		if inx and iny:
+			room.show()
+
+
+func _get_aabb_of_node(node):
+	var res = null
+	for n in node.get_children():
+		if n is MeshInstance:
+			var aabb= n.get_aabb()
+			aabb.position+=node.transform.origin
+			if res == null:
+				res=aabb
+			if aabb.position.x<res.position.x:
+				res.position.x=aabb.position.x
+			if aabb.position.z<res.position.z:
+				res.position.z=aabb.position.z
+			if aabb.end.x>res.end.x:
+				res.end.x=aabb.end.x
+			if aabb.end.z>res.end.z:
+				res.end.z=aabb.end.z
+	return res
+
 	
 # interactions
 func _input(event):
