@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PuzzleScreen.gd" type="Script" id=1]
+
+[node name="PuzzleScreen" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+playerPath = NodePath("../../../Player")
+
+[node name="Popup" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractLabel2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 3.46
+margin_right = 100.0
+margin_bottom = 34.06
+text = "Puzzle"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

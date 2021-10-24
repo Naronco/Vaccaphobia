@@ -6,7 +6,7 @@
 [ext_resource path="res://concept-art/milk_bottle.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://default_env.tres" type="Environment" id=5]
 [ext_resource path="res://Interactable.gd" type="Script" id=6]
-[ext_resource path="res://PuzzleScreen.gd" type="Script" id=7]
+[ext_resource path="res://PuzzleScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/slot.png" type="Texture" id=8]
 [ext_resource path="res://assets/key.png" type="Texture" id=9]
 [ext_resource path="res://concept-art/character_sheet.png" type="Texture" id=10]
@@ -337,36 +337,7 @@ __meta__ = {
 
 [node name="PuzzleLayer" type="CanvasLayer" parent="MarginContainer"]
 
-[node name="PuzzleScreen" type="Control" parent="MarginContainer/PuzzleLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-playerPath = NodePath("../../../Player")
-
-[node name="Popup" type="TextureRect" parent="MarginContainer/PuzzleLayer/PuzzleScreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InteractLabel2" type="Label" parent="MarginContainer/PuzzleLayer/PuzzleScreen"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -100.0
-margin_top = 3.46
-margin_right = 100.0
-margin_bottom = 34.06
-text = "Puzzle"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PuzzleScreen" parent="MarginContainer/PuzzleLayer" instance=ExtResource( 7 )]
 
 [connection signal="body_entered" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_exited"]
