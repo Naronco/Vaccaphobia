@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://concept-art/abstellraum.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://concept-art/grill.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://concept-art/shelf_small.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://concept-art/grill.png" type="Texture" id=4]
+[ext_resource path="res://concept-art/lamp.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://concept-art/lamp.png" type="Texture" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 6 )
 
 [node name="abstellraum" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130045, 2.5, 8.98723 )
@@ -10,3 +21,18 @@ mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
 material/2 = null
+
+[node name="shelf_small" type="MeshInstance" parent="."]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -0.796876, -5.76973e-05, 1.17122 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="grill" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.389348, 0, 0.976573 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 1 )
+
+[node name="lamp" type="MeshInstance" parent="grill"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.258595, 0, -1.50803 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 2 )

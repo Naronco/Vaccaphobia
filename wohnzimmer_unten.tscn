@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://concept-art/wohnzimmer.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://concept-art/mount_wood.png" type="Texture" id=2]
+[ext_resource path="res://concept-art/cow_head.png" type="Texture" id=3]
+[ext_resource path="res://concept-art/cow_head.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://concept-art/cow_hide.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://concept-art/tutorial_tisch.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://concept-art/side_desk.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://concept-art/shelf_small.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://concept-art/safe.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://concept-art/fireplace.png" type="Texture" id=10]
+[ext_resource path="res://concept-art/fireplace.obj" type="ArrayMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 10 )
 
 [node name="wohnzimmer_unten" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.763433, 0, 4.34843 )
@@ -10,3 +29,57 @@ mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
 material/2 = null
+
+[node name="cow_hide" type="MeshInstance" parent="."]
+transform = Transform( 2.62268e-07, -1.31134e-07, 3, -3, 2.26494e-07, 2.62268e-07, -2.26494e-07, -3, -1.31134e-07, 0.0392334, 1.58243, 3.45358 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="cow_head" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.3391, 1.52443, 3.48564 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+
+[node name="cow_head2" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.42442, 1.52443, 3.48564 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+
+[node name="cow_head3" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.02548, 1.63196, -2.46753 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+
+[node name="cow_head4" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.02548, 1.60037, 1.97323 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+
+[node name="side_desk" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, 0.0997264, -2.38419e-07, 3.1531 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="shelf_small" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.17117, 2.38419e-07, -3.28191 )
+mesh = ExtResource( 8 )
+material/0 = null
+
+[node name="tutorial_tisch" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.36371, 0, -0.564898 )
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="safe" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.61348, 0.6, -1.18197 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="fireplace" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.54929, 0, -0.441073 )
+mesh = ExtResource( 11 )
+material/0 = SubResource( 3 )

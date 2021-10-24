@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sideboard.obj-c17966c89977a471bf0aa81753277a62.mesh"
+
+[deps]
+
+files=[ "res://.import/sideboard.obj-c17966c89977a471bf0aa81753277a62.mesh" ]
+
+source_file="res://concept-art/sideboard.obj"
+dest_files=[ "res://.import/sideboard.obj-c17966c89977a471bf0aa81753277a62.mesh", "res://.import/sideboard.obj-c17966c89977a471bf0aa81753277a62.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
