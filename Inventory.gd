@@ -8,6 +8,8 @@ var itemDict = [
 	null,
 	preload("res://assets/gewinde_ding.png"),
 	preload("res://assets/knauf.png"),
+	preload("res://assets/key.png"),
+	preload("res://assets/key.png"),
 	preload("res://assets/key.png")
 ]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://concept-art/wohnzimmer.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/mount_wood.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://concept-art/cow_head2.png" type="Texture" id=12]
 [ext_resource path="res://concept-art/cow_head1.png" type="Texture" id=13]
 [ext_resource path="res://concept-art/cow_head3.png" type="Texture" id=14]
+[ext_resource path="res://scenes/PuzzleTrigger.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 12 )
@@ -141,3 +142,7 @@ shape = SubResource( 11 )
 [node name="CollisionShape6" type="CollisionShape" parent="colliders/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1754, 1.24677, -3.2978 )
 shape = SubResource( 12 )
+
+[node name="PuzzleTrigger2" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37556, 0.203612, -1.90326 )
+puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/safe"

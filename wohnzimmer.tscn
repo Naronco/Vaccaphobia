@@ -41,31 +41,31 @@ albedo_texture = ExtResource( 5 )
 [sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 10 )
 
-[sub_resource type="CylinderShape" id=25]
+[sub_resource type="CylinderShape" id=7]
 radius = 0.218583
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=8]
 albedo_texture = ExtResource( 17 )
 
-[sub_resource type="SpatialMaterial" id=19]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_texture = ExtResource( 16 )
 
-[sub_resource type="BoxShape" id=20]
+[sub_resource type="BoxShape" id=10]
 extents = Vector3( 0.108245, 1.26325, 3.5088 )
 
-[sub_resource type="BoxShape" id=21]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 0.108245, 1.26325, 3.5088 )
 
-[sub_resource type="BoxShape" id=22]
+[sub_resource type="BoxShape" id=12]
 extents = Vector3( 2.79487, 1.26325, 0.0957383 )
 
-[sub_resource type="BoxShape" id=23]
+[sub_resource type="BoxShape" id=13]
 extents = Vector3( 0.671691, 1.26325, 0.0957383 )
 
-[sub_resource type="BoxShape" id=24]
+[sub_resource type="BoxShape" id=14]
 extents = Vector3( 0.465961, 1, 0.937639 )
 
-[sub_resource type="BoxShape" id=26]
+[sub_resource type="BoxShape" id=15]
 extents = Vector3( 0.552803, 1.25921, 0.844631 )
 
 [sub_resource type="BoxShape" id=16]
@@ -74,13 +74,13 @@ extents = Vector3( 0.196763, 1.25921, 0.844631 )
 [sub_resource type="BoxShape" id=17]
 extents = Vector3( 0.355065, 1.25921, 0.446937 )
 
-[sub_resource type="ParticlesMaterial" id=28]
+[sub_resource type="ParticlesMaterial" id=18]
 direction = Vector3( 0, 1, 0 )
 spread = 42.17
 initial_velocity = 5.0
 initial_velocity_random = 0.3
 
-[sub_resource type="QuadMesh" id=27]
+[sub_resource type="QuadMesh" id=19]
 size = Vector2( 0.1, 0.1 )
 
 [node name="wohnzimmer" type="Spatial"]
@@ -124,17 +124,17 @@ transform = Transform( 0.361674, 0, 0.932304, 0, 1, 0, -0.932304, 0, 0.361674, 0
 
 [node name="CollisionShape" type="CollisionShape" parent="lamp/StaticBody6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01139, 0 )
-shape = SubResource( 25 )
+shape = SubResource( 7 )
 
 [node name="side_desk" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.6827, 0.0046308, 1.62508 )
 mesh = ExtResource( 1 )
-material/0 = SubResource( 18 )
+material/0 = SubResource( 8 )
 
 [node name="grammofon" type="MeshInstance" parent="."]
 transform = Transform( -0.38278, 0, 0.923839, 0, 1, 0, -0.923839, 0, -0.38278, -1.60983, 0.962772, 2.35171 )
 mesh = ExtResource( 14 )
-material/0 = SubResource( 19 )
+material/0 = SubResource( 9 )
 
 [node name="light_vacca" type="AudioStreamPlayer3D" parent="grammofon"]
 transform = Transform( 1, 0, 1.49012e-07, 0, 1, 0, -1.49012e-07, 0, 1, -0.00236177, 0, -1.04904e-05 )
@@ -154,38 +154,38 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00821, 1.2569, 0 )
-shape = SubResource( 20 )
+shape = SubResource( 10 )
 
 [node name="StaticBody2" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99746, 1.2569, 0 )
-shape = SubResource( 21 )
+shape = SubResource( 11 )
 
 [node name="StaticBody3" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83646, 1.2569, -3.5113 )
-shape = SubResource( 22 )
+shape = SubResource( 12 )
 
 [node name="StaticBody4" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42828, 1.2569, -3.5113 )
-shape = SubResource( 23 )
+shape = SubResource( 13 )
 
 [node name="StaticBody5" type="StaticBody" parent="colliders"]
 transform = Transform( 0.933505, 0, 0.358563, 0, 1, 0, -0.358563, 0, 0.933505, 0.226377, 0, -0.540475 )
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0067, 0 )
-shape = SubResource( 24 )
+shape = SubResource( 14 )
 
 [node name="StaticBody7" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56721, 1.24932, 0.559491 )
-shape = SubResource( 26 )
+shape = SubResource( 15 )
 
 [node name="StaticBody8" type="StaticBody" parent="colliders"]
 
@@ -211,8 +211,8 @@ puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/wohnz
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.361667, 0.434943, -3.19279 )
 visible = false
 visibility_aabb = AABB( -5.64508, -4, -6.74209, 11.2902, 8, 13.4842 )
-process_material = SubResource( 28 )
-draw_pass_1 = SubResource( 27 )
+process_material = SubResource( 18 )
+draw_pass_1 = SubResource( 19 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sparkles"]
 stream = ExtResource( 21 )

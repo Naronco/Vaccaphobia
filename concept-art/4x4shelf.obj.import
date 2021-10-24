@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/4x4shelf.obj-ad4e183ecd12e3edfeca5b72fd4954f2.mesh"
+
+[deps]
+
+files=[ "res://.import/4x4shelf.obj-ad4e183ecd12e3edfeca5b72fd4954f2.mesh" ]
+
+source_file="res://concept-art/4x4shelf.obj"
+dest_files=[ "res://.import/4x4shelf.obj-ad4e183ecd12e3edfeca5b72fd4954f2.mesh", "res://.import/4x4shelf.obj-ad4e183ecd12e3edfeca5b72fd4954f2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
