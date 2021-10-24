@@ -106,11 +106,12 @@ func _physics_process(delta):
 
 		light.transform.basis = Basis(Vector3(1, 0, 0), -PI/4)
 		
+		if direction != Vector3.ZERO:
+			direction = direction.normalized()
+		
 		var lockAngle = Input.is_action_pressed("strafe")
 		
 		if direction != Vector3.ZERO and not lockAngle:
-			direction = direction.normalized()
-			
 			# Direction to angle
 			targetPhi = 0.5*PI + atan2(direction.z, direction.x)
 			
