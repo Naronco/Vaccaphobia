@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://flur_unten.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://wohnzimmer.tscn" type="PackedScene" id=20]
 [ext_resource path="res://concept-art/stairs.obj" type="ArrayMesh" id=21]
 [ext_resource path="res://abstellraum_unten.tscn" type="PackedScene" id=22]
+[ext_resource path="res://concept-art/stairs.png" type="Texture" id=23]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -38,6 +39,9 @@ extents = Vector3( 10.365, 0.25, 4.545 )
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 1.294, 0.1, 1.486 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 23 )
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.193, 3.3951, 0.479123 )
@@ -139,7 +143,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0 )
 [node name="stairs" type="MeshInstance" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712969, -0.00253487, -1.71808 )
 mesh = ExtResource( 21 )
-material/0 = null
+material/0 = SubResource( 10 )
 
 [node name="Stairs" type="StaticBody" parent="Level/stairs"]
 transform = Transform( 0.478079, -0.878317, 0, 0.878317, 0.478079, 0, 0, 0, 1, 0.83009, 1.09659, 0.13928 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://concept-art/stromkasten.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/flur_unten.obj" type="ArrayMesh" id=2]
@@ -6,6 +6,15 @@
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0.393087, 0.601022 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 3.61808, 1.27101, 0.128155 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.121748, 1.27101, 1.60819 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.121748, 1.27101, 1.60819 )
 
 [node name="flur_unten" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29117, 0, -1.22228 )
@@ -33,3 +42,19 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="tutorial_tisch/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00478935, 0.221992, 0.0134476 )
 shape = SubResource( 1 )
+
+[node name="colliders" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="colliders"]
+
+[node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50963, 1.22979, -1.01172 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99523, 1.22979, 0.486197 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.991578, 1.22979, 0.486197 )
+shape = SubResource( 4 )

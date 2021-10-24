@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://concept-art/wohnzimmer.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/mount_wood.png" type="Texture" id=2]
@@ -32,6 +32,24 @@ albedo_texture = ExtResource( 13 )
 
 [sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 10 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.115726, 1.25844, 3.58128 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 2.08641, 1.24553, 0.0826778 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 0.669121, 1.24553, 0.179333 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.509092, 1.24553, 0.858744 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.615142, 1.24553, 0.993719 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 0.555843, 1.24553, 0.189616 )
 
 [node name="wohnzimmer_unten" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.763433, 0, 4.34843 )
@@ -95,3 +113,31 @@ material/0 = null
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.54929, 0, -0.441073 )
 mesh = ExtResource( 11 )
 material/0 = SubResource( 6 )
+
+[node name="colliders" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="colliders"]
+
+[node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98669, 1.24677, 0 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00745749, 1.24677, 3.50098 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0946133, 1.24677, 3.15223 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49618, 1.24677, -0.434683 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37685, 1.24677, -0.566444 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1754, 1.24677, -3.2978 )
+shape = SubResource( 12 )
