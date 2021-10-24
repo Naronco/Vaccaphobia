@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://concept-art/kind_raum.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/sideboard.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/bed.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://concept-art/bed.png" type="Texture" id=4]
+[ext_resource path="res://scenes/PuzzleTrigger.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 4 )
@@ -11,16 +12,16 @@ albedo_texture = ExtResource( 4 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 1, 1.26266, 1.51667 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 1.07612, 0.385092, 0.89247 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.213808, 0.326055, 0.273986 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 2.29091, 1.26266, 0.103333 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.594035, 1.26266, 0.103333 )
 
 [node name="kind_raum" type="Spatial"]
@@ -54,22 +55,26 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.468157, 0.373787, 0.0169542 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="StaticBody5" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.275, 0.325995, 1.39167 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26677, 1.2481, -0.998482 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="StaticBody3" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41786, 1.2481, -0.998482 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
+
+[node name="PuzzleTrigger" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06024, 0.203612, 1.0452 )
+puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/kindraum"

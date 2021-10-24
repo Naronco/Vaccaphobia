@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://concept-art/eltern_raum.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/bed.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/bed1.png" type="Texture" id=3]
+[ext_resource path="res://concept-art/4x4shelf.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://concept-art/4x4shelf.png" type="Texture" id=5]
+[ext_resource path="res://scenes/PuzzleTrigger.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 3 )
@@ -18,6 +21,9 @@ extents = Vector3( 3.5366, 1.37746, 0.735022 )
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 1.04447, 0.371061, 0.855888 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 5 )
 
 [node name="eltern_raum" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83361, 2.5, -3.45394 )
@@ -61,3 +67,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56666, 1.25503, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09696, -0.884882, 0.488366 )
 shape = SubResource( 5 )
+
+[node name="4x4shelf" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83093, -2.38419e-07, -0.69874 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 6 )
+
+[node name="PuzzleTrigger" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80537, 0.203612, -0.333601 )
+puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/4x4shelf"

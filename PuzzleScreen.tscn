@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://PuzzleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/gewinde_ding.png" type="Texture" id=2]
@@ -14,6 +14,12 @@
 [ext_resource path="res://pickup_ui_controller.gd" type="Script" id=12]
 [ext_resource path="res://remove_target.gd" type="Script" id=13]
 [ext_resource path="res://concept-art/Rätsel PNG/Kommode in Flur oben/Schublade zu/Kommode ohne Knauf mit Ding.png" type="Texture" id=14]
+[ext_resource path="res://concept-art/Rätsel PNG/Schrank Wohnzimmer/Kommode_bett.png" type="Texture" id=15]
+[ext_resource path="res://4x4shelf.gd" type="Script" id=16]
+[ext_resource path="res://concept-art/Andere Krita Sachen/Save/Save zu.png" type="Texture" id=17]
+[ext_resource path="res://concept-art/Andere Krita Sachen/Save/Schluessel im Save (einzeln)/Schluessel.png" type="Texture" id=18]
+[ext_resource path="res://concept-art/Andere Krita Sachen/Save/Save auf ohne key.png" type="Texture" id=19]
+[ext_resource path="res://safe.gd" type="Script" id=20]
 
 [node name="PuzzleScreen" type="Control"]
 anchor_right = 1.0
@@ -221,7 +227,7 @@ __meta__ = {
 addToInventory = true
 inventoryId = 1
 
-[node name="4x4 drawers" type="Control" parent="."]
+[node name="kindraum" type="Control" parent="."]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -229,7 +235,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="4x4 drawers"]
+[node name="bg" type="Sprite" parent="kindraum"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 15 )
+
+[node name="clickables" type="Container" parent="kindraum"]
+margin_left = 108.0
+margin_top = 17.0
+margin_right = 368.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4x4shelf" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cloneNode = NodePath("Schublade")
+
+[node name="ColorRect" type="ColorRect" parent="4x4shelf"]
 margin_right = 512.0
 margin_bottom = 300.0
 color = Color( 0.415686, 0.415686, 0.415686, 1 )
@@ -237,14 +266,100 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Schublade" type="Node2D" parent="4x4 drawers"]
+[node name="Schublade" type="Container" parent="4x4shelf"]
+anchor_left = 1.323
+anchor_top = 0.301
+anchor_right = 3.413
+anchor_bottom = 1.513
+margin_left = 47.08
+margin_top = 187.96
+margin_right = 43.48
+margin_bottom = 184.48
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Schublade offen" type="Sprite" parent="4x4 drawers/Schublade"]
-position = Vector2( 0, 34 )
+[node name="Schublade zu" type="Sprite" parent="4x4shelf/Schublade"]
+position = Vector2( 41.7267, 23.8303 )
+texture = ExtResource( 10 )
+
+[node name="Schublade offen" type="Sprite" parent="4x4shelf/Schublade"]
+visible = false
+position = Vector2( 20.0445, 42.5059 )
+z_index = 4
 texture = ExtResource( 11 )
 
-[node name="Schublade zu" type="Sprite" parent="4x4 drawers/Schublade"]
-texture = ExtResource( 10 )
+[node name="safe" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="safe"]
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0.415686, 0.415686, 0.415686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save zu" type="Sprite" parent="safe"]
+position = Vector2( 256, 150 )
+texture = ExtResource( 17 )
+
+[node name="Save auf ohne key" type="Sprite" parent="safe"]
+visible = false
+position = Vector2( 256, 150 )
+texture = ExtResource( 19 )
+
+[node name="Schluessel" type="Sprite" parent="safe/Save auf ohne key"]
+position = Vector2( -0.838867, -5.14966 )
+texture = ExtResource( 18 )
+
+[node name="remove_target" type="Container" parent="safe/Save auf ohne key/Schluessel"]
+margin_left = -39.0
+margin_top = -26.0
+margin_right = 37.0
+margin_bottom = 29.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+addToInventory = true
+inventoryId = 5
+
+[node name="wrong" type="RichTextLabel" parent="safe"]
+visible = false
+margin_left = 376.511
+margin_top = 169.1
+margin_right = 469.511
+margin_bottom = 186.1
+text = "WRONG!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="safe"]
+margin_left = 374.522
+margin_top = 137.475
+margin_right = 482.522
+margin_bottom = 162.475
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="safe"]
+margin_left = 376.511
+margin_top = 121.1
+margin_right = 469.511
+margin_bottom = 138.1
+text = "Enter Code:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="gui_input" from="bookshelf/item/remove_target" to="bookshelf/item/remove_target" method="_on_remove_target_gui_input"]
 [connection signal="gui_input" from="flur_drawer/open_key/remove_target" to="flur_drawer/open_key/remove_target" method="_on_remove_target_gui_input"]
@@ -252,3 +367,5 @@ texture = ExtResource( 10 )
 [connection signal="gui_input" from="flur_drawer/no_knob_but_ding/remove_target" to="flur_drawer/no_knob_but_ding/remove_target" method="_on_remove_target_gui_input"]
 [connection signal="gui_input" from="flur_drawer/no_knob2/remove_target" to="flur_drawer/no_knob2/remove_target" method="_on_remove_target_gui_input"]
 [connection signal="gui_input" from="wohnzimmer_desk/item/remove_target" to="wohnzimmer_desk/item/remove_target" method="_on_remove_target_gui_input"]
+[connection signal="gui_input" from="safe/Save auf ohne key/Schluessel/remove_target" to="safe/Save auf ohne key/Schluessel/remove_target" method="_on_remove_target_gui_input"]
+[connection signal="text_entered" from="safe/LineEdit" to="safe" method="_on_LineEdit_text_entered"]
