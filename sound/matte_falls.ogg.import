@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/matte_falls.ogg-8c0d887dcac64b3342eb4ccf4737fe6c.oggstr"
+
+[deps]
+
+source_file="res://sound/matte_falls.ogg"
+dest_files=[ "res://.import/matte_falls.ogg-8c0d887dcac64b3342eb4ccf4737fe6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
