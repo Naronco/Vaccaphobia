@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://concept-art/flur_oben_2.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/side_desk.obj" type="ArrayMesh" id=2]
@@ -16,6 +16,15 @@ albedo_texture = ExtResource( 6 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 5 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1.53974, 1.36094, 1.73236 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1, 1.36094, 0.125099 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1, 1.36094, 0.125099 )
 
 [node name="flur_oben_2" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78973, 2.5, -1.39502 )
@@ -46,3 +55,23 @@ material/1 = SubResource( 3 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.111733, 0, 0.431949 )
 mesh = ExtResource( 2 )
 material/0 = null
+
+[node name="colliders" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="colliders"]
+
+[node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23464, 1.22381, 0.617766 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2" type="StaticBody" parent="colliders"]
+
+[node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0210299, 1.22716, -0.999537 )
+shape = SubResource( 5 )
+
+[node name="StaticBody3" type="StaticBody" parent="colliders"]
+
+[node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83038, 1.22716, -0.999537 )
+shape = SubResource( 6 )
