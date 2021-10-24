@@ -243,8 +243,9 @@ func _hide_and_show_rooms_and_doors(rooms, doors):
 		#player might be in this room
 		room.hide()
 
-		var inx=transform.origin.x>=bb.position.x and transform.origin.x<bb.end.x
-		var iny=transform.origin.z>=bb.position.z and transform.origin.z<bb.end.z
+		var tol=0.5
+		var inx=transform.origin.x>=bb.position.x-tol and transform.origin.x<bb.end.x+tol
+		var iny=transform.origin.z>=bb.position.z-tol and transform.origin.z<bb.end.z+tol
 	
 		if inx and iny:
 			room.show()
