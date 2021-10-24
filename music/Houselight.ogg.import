@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Houselight.ogg-62cfa0563a4e74b8c322c352421d8589.oggstr"
+
+[deps]
+
+source_file="res://music/Houselight.ogg"
+dest_files=[ "res://.import/Houselight.ogg-62cfa0563a4e74b8c322c352421d8589.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

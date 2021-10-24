@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Great Job.ogg-3285bda2adb3dfd34b8a4bbabc7e5af5.oggstr"
+
+[deps]
+
+source_file="res://music/Great Job.ogg"
+dest_files=[ "res://.import/Great Job.ogg-3285bda2adb3dfd34b8a4bbabc7e5af5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

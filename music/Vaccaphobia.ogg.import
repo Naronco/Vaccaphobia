@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Vaccaphobia.ogg-84eb23d04eca558dd8d5533e4f0a57ed.oggstr"
+
+[deps]
+
+source_file="res://music/Vaccaphobia.ogg"
+dest_files=[ "res://.import/Vaccaphobia.ogg-84eb23d04eca558dd8d5533e4f0a57ed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

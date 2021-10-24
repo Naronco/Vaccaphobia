@@ -17,6 +17,8 @@
 [ext_resource path="res://concept-art/sideboard.obj" type="ArrayMesh" id=15]
 [ext_resource path="res://concept-art/grammofon.png" type="Texture" id=16]
 [ext_resource path="res://concept-art/sidedesk.png" type="Texture" id=17]
+[ext_resource path="res://music/light_vaccadon.ogg" type="AudioStream" id=18]
+[ext_resource path="res://light_vacca.gd" type="Script" id=19]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 12 )
@@ -115,6 +117,13 @@ material/0 = SubResource( 7 )
 transform = Transform( -0.38278, 0, 0.923839, 0, 1, 0, -0.923839, 0, -0.38278, -1.60983, 0.962772, 2.35171 )
 mesh = ExtResource( 14 )
 material/0 = SubResource( 8 )
+
+[node name="light_vacca" type="AudioStreamPlayer3D" parent="grammofon"]
+transform = Transform( 1, 0, 1.49012e-07, 0, 1, 0, -1.49012e-07, 0, 1, -0.00236177, 0, -1.04904e-05 )
+stream = ExtResource( 18 )
+autoplay = true
+max_distance = 10.0
+script = ExtResource( 19 )
 
 [node name="sideboard" type="MeshInstance" parent="."]
 transform = Transform( 1.64754, 0, 0, 0, 1.04583, 0, 0, 0, 1.59353, -1.55824, 0.00463057, 2.3717 )
