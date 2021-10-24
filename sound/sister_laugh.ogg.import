@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sister_laugh.ogg-d29350c38b1d66d073781022c736eeef.oggstr"
+
+[deps]
+
+source_file="res://sound/sister_laugh.ogg"
+dest_files=[ "res://.import/sister_laugh.ogg-d29350c38b1d66d073781022c736eeef.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
