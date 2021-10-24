@@ -40,6 +40,9 @@ albedo_texture = ExtResource( 5 )
 [sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 10 )
 
+[sub_resource type="CylinderShape" id=25]
+radius = 0.218583
+
 [sub_resource type="SpatialMaterial" id=18]
 albedo_texture = ExtResource( 17 )
 
@@ -60,9 +63,6 @@ extents = Vector3( 0.671691, 1.26325, 0.0957383 )
 
 [sub_resource type="BoxShape" id=24]
 extents = Vector3( 0.465961, 1, 0.937639 )
-
-[sub_resource type="CylinderShape" id=25]
-radius = 0.218583
 
 [sub_resource type="BoxShape" id=26]
 extents = Vector3( 0.552803, 1.25921, 0.844631 )
@@ -105,9 +105,16 @@ mesh = ExtResource( 7 )
 material/0 = SubResource( 5 )
 
 [node name="lamp" type="MeshInstance" parent="."]
-transform = Transform( 0.361674, 0, -0.932305, 0, 1, 0, 0.932305, 0, 0.361674, 0.698037, 0.00463033, -3.04634 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39121, 0.00463033, -3.19279 )
 mesh = ExtResource( 9 )
 material/0 = SubResource( 6 )
+
+[node name="StaticBody6" type="StaticBody" parent="lamp"]
+transform = Transform( 0.361674, 0, 0.932304, 0, 1, 0, -0.932304, 0, 0.361674, 0.00588369, -0.00463033, -0.0108258 )
+
+[node name="CollisionShape" type="CollisionShape" parent="lamp/StaticBody6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01139, 0 )
+shape = SubResource( 25 )
 
 [node name="side_desk" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.6827, 0.0046308, 1.62508 )
@@ -163,13 +170,6 @@ transform = Transform( 0.933505, 0, 0.358563, 0, 1, 0, -0.358563, 0, 0.933505, 0
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0067, 0 )
 shape = SubResource( 24 )
-
-[node name="StaticBody6" type="StaticBody" parent="colliders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710258, 0, -3.04477 )
-
-[node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01139, 0 )
-shape = SubResource( 25 )
 
 [node name="StaticBody7" type="StaticBody" parent="colliders"]
 

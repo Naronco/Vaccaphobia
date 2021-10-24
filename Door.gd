@@ -8,6 +8,7 @@ var whatToDo = "open door"
 
 #if not zero, then door is locked and must be unlocked with the item of the given id
 export(int) var unlockItemId = 0
+export(bool) var stayOpen = false
 
 
 # Declare member variables here. Examples:
@@ -56,6 +57,9 @@ func _process(delta):
 
 
 func _on_Area_body_entered(body):
+	if stayOpen and doorOpen:
+		return
+	
 	if body.name == "Player" and not doorInUse: # hardcoded, whatever
 		if is_locked():
 			whatToDo = "unlock door"
@@ -65,6 +69,9 @@ func _on_Area_body_entered(body):
 
 
 func _on_Area_body_exited(body):
+	if stayOpen and doorOpen:
+		return
+	
 	if body.name == "Player" and not doorInUse:
 		body.disable_interaction(self)
 	
@@ -74,7 +81,7 @@ func _on_Area_body_exited(body):
 
 func on_player_interact(player):
 	print("Player wants to open a door")
-	if doorInUse:
+	if doorInUse or (stayOpen and doorOpen):
 		return
 	
 	if is_locked():

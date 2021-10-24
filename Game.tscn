@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://flur_unten.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://concept-art/stairs.obj" type="ArrayMesh" id=21]
 [ext_resource path="res://abstellraum_unten.tscn" type="PackedScene" id=22]
 [ext_resource path="res://concept-art/stairs.png" type="Texture" id=23]
+[ext_resource path="res://LampFallArea.gd" type="Script" id=24]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -48,6 +49,9 @@ extents = Vector3( 0.193, 3.3951, 0.479123 )
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 4.23229, 2.50348, 4.67088 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 1, 1, 0.456531 )
 
 [sub_resource type="CylinderShape" id=8]
 radius = 0.696889
@@ -171,6 +175,7 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.8261
 
 [node name="Door2" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -1.05596, 3.79207, 0.8408 )
+stayOpen = true
 
 [node name="Door3" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.123358, 3.79207, 7.99424 )
@@ -195,6 +200,14 @@ script = ExtResource( 9 )
 [node name="CollisionShape" type="CollisionShape" parent="Level/1og/HideOutsideArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.01561, 0 )
 shape = SubResource( 11 )
+
+[node name="LampFallArea" type="Area" parent="Level/1og"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14879, 3.52975, 0.281052 )
+script = ExtResource( 24 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Level/1og/LampFallArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00867271 )
+shape = SubResource( 12 )
 
 [node name="eg" type="Spatial" parent="Level"]
 
@@ -387,6 +400,8 @@ __meta__ = {
 
 [connection signal="body_entered" from="Level/1og/HideOutsideArea" to="Level/1og/HideOutsideArea" method="_on_HideOutsideArea_body_entered"]
 [connection signal="body_exited" from="Level/1og/HideOutsideArea" to="Level/1og/HideOutsideArea" method="_on_HideOutsideArea_body_exited"]
+[connection signal="body_entered" from="Level/1og/LampFallArea" to="Level/1og/LampFallArea" method="_on_LampFallArea_body_entered"]
+[connection signal="body_exited" from="Level/1og/LampFallArea" to="Level/1og/LampFallArea" method="_on_LampFallArea_body_exited"]
 [connection signal="body_entered" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_exited"]
 [connection signal="gui_input" from="MarginContainer/CanvasLayer/Inventory" to="MarginContainer/CanvasLayer/Inventory" method="_on_Inventory_gui_input"]
