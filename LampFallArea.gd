@@ -12,6 +12,7 @@ var activated=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 
@@ -38,6 +39,10 @@ func _on_LampFallArea_body_entered(body):
 			var sparkles = get_node("/root/Spatial/Level/1og/wohnzimmer/Sparkles")
 			sparkles.show()
 			
+			var sparklesAudio = get_node("/root/Spatial/Level/1og/wohnzimmer/Sparkles/AudioStreamPlayer3D")
+			sparklesAudio.play()
+			
+			$AudioStreamPlayer3D.play()
 			
 			activated = true
 			

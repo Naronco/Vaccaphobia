@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://concept-art/side_desk.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/bookshelf.obj" type="ArrayMesh" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://music/light_vaccadon.ogg" type="AudioStream" id=18]
 [ext_resource path="res://light_vacca.gd" type="Script" id=19]
 [ext_resource path="res://scenes/PuzzleTrigger.tscn" type="PackedScene" id=20]
+[ext_resource path="res://sound/electric.ogg" type="AudioStream" id=21]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 12 )
@@ -212,3 +213,6 @@ visible = false
 visibility_aabb = AABB( -5.64508, -4, -6.74209, 11.2902, 8, 13.4842 )
 process_material = SubResource( 28 )
 draw_pass_1 = SubResource( 27 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sparkles"]
+stream = ExtResource( 21 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lamp_falls.ogg-51dc11322d8867de948ae1b3c7e9c0fb.oggstr"
+
+[deps]
+
+source_file="res://sound/lamp_falls.ogg"
+dest_files=[ "res://.import/lamp_falls.ogg-51dc11322d8867de948ae1b3c7e9c0fb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

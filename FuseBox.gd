@@ -57,6 +57,9 @@ func on_player_interact(player):
 		var dir_light = get_node("/root/Spatial/DirectionalLight")
 		dir_light.hide()
 		
+		var sparklesAudio = get_node("/root/Spatial/Level/1og/wohnzimmer/Sparkles/AudioStreamPlayer3D")
+		sparklesAudio.stop()
+		
 		
 		player.disable_interaction(self)
 		
