@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://concept-art/stromkasten.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/flur_unten.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/tutorial_tisch.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://FuseBox.gd" type="Script" id=4]
+[ext_resource path="res://sound/dialog/german/4.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CylinderShape" id=5]
 radius = 0.854592
@@ -43,6 +44,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="stromkasten/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.475472, 0 )
 shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="stromkasten/Area"]
+stream = ExtResource( 5 )
 
 [node name="tutorial_tisch" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17999, 2.38419e-07, 1.3479 )
