@@ -1,11 +1,10 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://flur_unten.tscn" type="PackedScene" id=2]
 [ext_resource path="res://flur_oben.tscn" type="PackedScene" id=3]
 [ext_resource path="res://concept-art/milk_bottle.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://default_env.tres" type="Environment" id=5]
-[ext_resource path="res://Interactable.gd" type="Script" id=6]
 [ext_resource path="res://PuzzleScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/slot.png" type="Texture" id=8]
 [ext_resource path="res://HideOutsideArea.gd" type="Script" id=9]
@@ -52,10 +51,6 @@ extents = Vector3( 4.23229, 2.50348, 4.67088 )
 
 [sub_resource type="BoxShape" id=12]
 extents = Vector3( 1, 1, 0.456531 )
-
-[sub_resource type="CylinderShape" id=8]
-radius = 0.696889
-height = 2.52381
 
 [sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 1, 1, 1, 0.32549 )
@@ -172,6 +167,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77558, 2.49647, -1.39012 )
 
 [node name="Door" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.82616, 3.79207, -0.756706 )
+opensOnlyFromOneSide = true
 
 [node name="Door2" parent="Level/1og" instance=ExtResource( 11 )]
 transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -1.05596, 3.79207, 0.8408 )
@@ -220,13 +216,6 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.7634
 
 [node name="abstellraum_unten" parent="Level/eg" instance=ExtResource( 22 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0, 8.987 )
-
-[node name="FuseBox" type="Area" parent="Level/eg"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50567, 1.10488, -0.0818948 )
-script = ExtResource( 6 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Level/eg/FuseBox"]
-shape = SubResource( 8 )
 
 [node name="Door" parent="Level/eg" instance=ExtResource( 11 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3.20502, 1.292, 0.912737 )
@@ -402,6 +391,4 @@ __meta__ = {
 [connection signal="body_exited" from="Level/1og/HideOutsideArea" to="Level/1og/HideOutsideArea" method="_on_HideOutsideArea_body_exited"]
 [connection signal="body_entered" from="Level/1og/LampFallArea" to="Level/1og/LampFallArea" method="_on_LampFallArea_body_entered"]
 [connection signal="body_exited" from="Level/1og/LampFallArea" to="Level/1og/LampFallArea" method="_on_LampFallArea_body_exited"]
-[connection signal="body_entered" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Level/eg/FuseBox" to="Level/eg/FuseBox" method="_on_Area_body_exited"]
 [connection signal="gui_input" from="MarginContainer/CanvasLayer/Inventory" to="MarginContainer/CanvasLayer/Inventory" method="_on_Inventory_gui_input"]

@@ -9,6 +9,7 @@ var whatToDo = "open door"
 #if not zero, then door is locked and must be unlocked with the item of the given id
 export(int) var unlockItemId = 0
 export(bool) var stayOpen = false
+export(bool) var opensOnlyFromOneSide = false
 
 
 # Declare member variables here. Examples:
@@ -63,7 +64,8 @@ func _on_Area_body_entered(body):
 	if body.name == "Player" and not doorInUse: # hardcoded, whatever
 		if is_locked():
 			whatToDo = "unlock door"
-		body.enable_interaction(self)
+		if is_on_correct_side(body):
+			body.enable_interaction(self)
 		
 	pass
 
@@ -118,4 +120,15 @@ func on_player_interact(player):
 
 func is_locked():
 	return unlockItemId!=0
+
+
+func is_on_correct_side(player):
+	if not opensOnlyFromOneSide:
+		return true
+	
+	#Hardcoded, whatever
+	var normal = Vector3(-1, 0, 0)
+	var diff = player.transform.origin-transform.origin
+	return diff.dot(normal)>0
+	
 

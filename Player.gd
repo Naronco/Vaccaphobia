@@ -256,6 +256,8 @@ func _hide_and_show_rooms_and_doors(rooms, doors):
 			#increase tolerance only if door is unlocked
 			if door.is_locked():
 				continue
+			if door.opensOnlyFromOneSide and !door.is_on_correct_side(self):
+				continue
 			
 			var dx=transform.origin.x-door.transform.origin.x
 			var dz=transform.origin.z-door.transform.origin.z
