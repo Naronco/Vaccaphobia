@@ -134,7 +134,7 @@ material/0 = SubResource( 21 )
 transform = Transform( 1, 0, 1.49012e-07, 0, 1, 0, -1.49012e-07, 0, 1, -0.00236177, 0, -1.04904e-05 )
 stream = ExtResource( 18 )
 autoplay = true
-max_distance = 10.0
+max_distance = 30.0
 script = ExtResource( 19 )
 
 [node name="sideboard" type="MeshInstance" parent="."]

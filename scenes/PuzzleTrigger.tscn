@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Interactable.gd" type="Script" id=1]
 
-[sub_resource type="CylinderShape" id=1]
-radius = 0.926992
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.446324, 1, 0.668305 )
 
 [node name="PuzzleTrigger" type="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86794, 0.203612, -1.2589 )
