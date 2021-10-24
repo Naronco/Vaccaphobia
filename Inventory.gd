@@ -25,7 +25,7 @@ func contains(item):
 	return items.find(item) != -1
 
 func add(item):
-	var empty = items.find(item)
+	var empty = items.find(0)
 	if empty == -1:
 		return false
 	items[empty] = item
