@@ -166,7 +166,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77558, 2.49647, -1.39012 )
 [node name="flur_oben" parent="Level/1og" instance=ExtResource( 3 )]
 
 [node name="Door" parent="Level/1og" instance=ExtResource( 11 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.82616, 3.79207, -0.756706 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74445, 3.79207, -0.840736 )
 opensOnlyFromOneSide = true
 
 [node name="Door2" parent="Level/1og" instance=ExtResource( 11 )]

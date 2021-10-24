@@ -35,6 +35,10 @@ func _on_LampFallArea_body_entered(body):
 			lamp.transform.origin.x -= 0.5
 			lamp.transform.origin.y += 0.148
 			
+			var sparkles = get_node("/root/Spatial/Level/1og/wohnzimmer/Sparkles")
+			sparkles.show()
+			
+			
 			activated = true
 			
 

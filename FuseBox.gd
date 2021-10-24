@@ -41,13 +41,28 @@ func on_player_interact(player):
 	print("Player wants to turn off electricity")
 	
 	
-	var dir_light = get_node("/root/Spatial/DirectionalLight")
-	dir_light.hide()
+	var sparkles = get_node("/root/Spatial/Level/1og/wohnzimmer/Sparkles")
+	var canTurnOff = sparkles.is_visible()
 	
 	
-	player.disable_interaction(self)
-	
-	interactedOnce=true
-	
-	pass
+	if canTurnOff:
+		sparkles.hide()
+		
+		#make lamp passable
+		var lamp = get_node("/root/Spatial/Level/1og/wohnzimmer/lamp")
+		for n in lamp.get_children():
+			lamp.remove_child(n)
+			n.queue_free()
+		
+		var dir_light = get_node("/root/Spatial/DirectionalLight")
+		dir_light.hide()
+		
+		
+		player.disable_interaction(self)
+		
+		interactedOnce=true
+	else:
+		#TODO play sound "why should I do this?"
+		pass
+
 
