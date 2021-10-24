@@ -206,9 +206,10 @@ func _physics_process(delta):
 	var kitchen_unten = get_node("/root/Spatial/Level/eg/kitchen_unten")
 	var wohnzimmer_unten = get_node("/root/Spatial/Level/eg/wohnzimmer_unten")
 	var flur_unten = get_node("/root/Spatial/Level/eg/flur_unten")
+	var abstellraum_unten = get_node("/root/Spatial/Level/eg/abstellraum_unten")
 	
 	var og1list = [eltern_raum,flur_oben_2,kind_raum,abstellraum,wohnzimmer,flur_oben]
-	var eglist = [kitchen_unten,wohnzimmer_unten,flur_unten]
+	var eglist = [kitchen_unten,wohnzimmer_unten,flur_unten,abstellraum_unten]
 	
 	#now get all doors
 	var og1doors = _get_doors(og1)
@@ -245,7 +246,18 @@ func _hide_and_show_rooms_and_doors(rooms, doors):
 		#player might be in this room
 		room.hide()
 
-		var tol=0.5
+		var tol=0
+		#room tolerance only if near a door
+		#if currentInteractable!=null and currentInteractable.name.begins_with("Door"):
+		#	tol=0.5
+		var rad=0.7+0.3
+		for door in doors:
+			var dx=transform.origin.x-door.transform.origin.x
+			var dz=transform.origin.z-door.transform.origin.z
+			if dx*dx+dz*dz<rad*rad:
+				tol=rad
+		
+		
 		var inx=transform.origin.x>=bb.position.x-tol and transform.origin.x<bb.end.x+tol
 		var iny=transform.origin.z>=bb.position.z-tol and transform.origin.z<bb.end.z+tol
 	
