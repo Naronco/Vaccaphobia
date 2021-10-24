@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/schrank_front.png-e9a34a88cb3e74525dd2704ae62b9b69.stex"
+path="res://.import/Beistelltisch ohne Ding.png-0c699dd475671ceacc811391ab7a41df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://concept-art/Rätsel PNG/Schrank Wohnzimmer/schrank_front.png"
-dest_files=[ "res://.import/schrank_front.png-e9a34a88cb3e74525dd2704ae62b9b69.stex" ]
+source_file="res://concept-art/Rätsel PNG/Beistelltisch/Beistelltisch ohne Ding.png"
+dest_files=[ "res://.import/Beistelltisch ohne Ding.png-0c699dd475671ceacc811391ab7a41df.stex" ]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://concept-art/eltern_raum.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/bed.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://concept-art/bed.png" type="Texture" id=3]
+[ext_resource path="res://concept-art/bed1.png" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 3 )
