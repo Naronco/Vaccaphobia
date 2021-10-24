@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interactable.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.926992
+
+[node name="PuzzleTrigger" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86794, 0.203612, -1.2589 )
+script = ExtResource( 1 )
+whatToDo = "inspect"
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Area_body_exited"]

@@ -11,7 +11,7 @@ func _ready():
 
 func _on_remove_target_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		var inventory = get_node("/root/Inventory")
+		var inventory = get_node("/root/Spatial/MarginContainer/CanvasLayer/Inventory")
 		if addToInventory:
 			inventory.add(inventoryId)
 		if needsInventory:

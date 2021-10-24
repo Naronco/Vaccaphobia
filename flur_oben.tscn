@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://concept-art/flur_oben.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/sideboard.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://concept-art/cow_statue.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://concept-art/cow_statue.png" type="Texture" id=4]
 [ext_resource path="res://concept-art/cow_statue_base.png" type="Texture" id=5]
-[ext_resource path="res://Interactable.gd" type="Script" id=6]
+[ext_resource path="res://scenes/PuzzleTrigger.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 5 )
@@ -33,9 +33,6 @@ extents = Vector3( 0.107641, 1.25821, 0.595708 )
 
 [sub_resource type="BoxShape" id=9]
 extents = Vector3( 0.107641, 1.25821, 0.63022 )
-
-[sub_resource type="CylinderShape" id=10]
-radius = 0.926992
 
 [node name="flur_oben" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, 2.51, -0.758 )
@@ -114,15 +111,5 @@ shape = SubResource( 8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7477, 1.24415, 0.989381 )
 shape = SubResource( 9 )
 
-[node name="PuzzleTrigger" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86794, 0.203612, -1.2589 )
-script = ExtResource( 6 )
-whatToDo = "inspect"
+[node name="PuzzleTrigger" parent="." instance=ExtResource( 6 )]
 puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/flur_drawer"
-
-[node name="CollisionShape" type="CollisionShape" parent="PuzzleTrigger"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 10 )
-
-[connection signal="body_entered" from="PuzzleTrigger" to="PuzzleTrigger" method="_on_Area_body_entered"]
-[connection signal="body_exited" from="PuzzleTrigger" to="PuzzleTrigger" method="_on_Area_body_exited"]

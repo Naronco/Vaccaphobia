@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://concept-art/side_desk.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://concept-art/bookshelf.obj" type="ArrayMesh" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://concept-art/sidedesk.png" type="Texture" id=17]
 [ext_resource path="res://music/light_vaccadon.ogg" type="AudioStream" id=18]
 [ext_resource path="res://light_vacca.gd" type="Script" id=19]
+[ext_resource path="res://scenes/PuzzleTrigger.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 12 )
@@ -39,31 +40,31 @@ albedo_texture = ExtResource( 5 )
 [sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 10 )
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=7]
 albedo_texture = ExtResource( 17 )
 
-[sub_resource type="SpatialMaterial" id=19]
+[sub_resource type="SpatialMaterial" id=8]
 albedo_texture = ExtResource( 16 )
 
-[sub_resource type="BoxShape" id=20]
+[sub_resource type="BoxShape" id=9]
 extents = Vector3( 0.108245, 1.26325, 3.5088 )
 
-[sub_resource type="BoxShape" id=21]
+[sub_resource type="BoxShape" id=10]
 extents = Vector3( 0.108245, 1.26325, 3.5088 )
 
-[sub_resource type="BoxShape" id=22]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.79487, 1.26325, 0.0957383 )
 
-[sub_resource type="BoxShape" id=23]
+[sub_resource type="BoxShape" id=12]
 extents = Vector3( 0.671691, 1.26325, 0.0957383 )
 
-[sub_resource type="BoxShape" id=24]
+[sub_resource type="BoxShape" id=13]
 extents = Vector3( 0.465961, 1, 0.937639 )
 
-[sub_resource type="CylinderShape" id=25]
+[sub_resource type="CylinderShape" id=14]
 radius = 0.218583
 
-[sub_resource type="BoxShape" id=26]
+[sub_resource type="BoxShape" id=15]
 extents = Vector3( 0.552803, 1.25921, 0.844631 )
 
 [sub_resource type="BoxShape" id=16]
@@ -111,12 +112,12 @@ material/0 = SubResource( 6 )
 [node name="side_desk" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.6827, 0.0046308, 1.62508 )
 mesh = ExtResource( 1 )
-material/0 = SubResource( 18 )
+material/0 = SubResource( 7 )
 
 [node name="grammofon" type="MeshInstance" parent="."]
 transform = Transform( -0.38278, 0, 0.923839, 0, 1, 0, -0.923839, 0, -0.38278, -1.60983, 0.962772, 2.35171 )
 mesh = ExtResource( 14 )
-material/0 = SubResource( 19 )
+material/0 = SubResource( 8 )
 
 [node name="light_vacca" type="AudioStreamPlayer3D" parent="grammofon"]
 transform = Transform( 1, 0, 1.49012e-07, 0, 1, 0, -1.49012e-07, 0, 1, -0.00236177, 0, -1.04904e-05 )
@@ -136,45 +137,45 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00821, 1.2569, 0 )
-shape = SubResource( 20 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99746, 1.2569, 0 )
-shape = SubResource( 21 )
+shape = SubResource( 10 )
 
 [node name="StaticBody3" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83646, 1.2569, -3.5113 )
-shape = SubResource( 22 )
+shape = SubResource( 11 )
 
 [node name="StaticBody4" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42828, 1.2569, -3.5113 )
-shape = SubResource( 23 )
+shape = SubResource( 12 )
 
 [node name="StaticBody5" type="StaticBody" parent="colliders"]
 transform = Transform( 0.933505, 0, 0.358563, 0, 1, 0, -0.358563, 0, 0.933505, 0.226377, 0, -0.540475 )
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0067, 0 )
-shape = SubResource( 24 )
+shape = SubResource( 13 )
 
 [node name="StaticBody6" type="StaticBody" parent="colliders"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710258, 0, -3.04477 )
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01139, 0 )
-shape = SubResource( 25 )
+shape = SubResource( 14 )
 
 [node name="StaticBody7" type="StaticBody" parent="colliders"]
 
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56721, 1.24932, 0.559491 )
-shape = SubResource( 26 )
+shape = SubResource( 15 )
 
 [node name="StaticBody8" type="StaticBody" parent="colliders"]
 
@@ -187,3 +188,11 @@ shape = SubResource( 16 )
 [node name="CollisionShape" type="CollisionShape" parent="colliders/StaticBody9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55037, 1.24932, 2.37817 )
 shape = SubResource( 17 )
+
+[node name="PuzzleTrigger" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66496, 0.203612, -2.3502 )
+puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/bookshelf"
+
+[node name="PuzzleTrigger2" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36321, 0.203612, 1.61838 )
+puzzleScreenPath = "/root/Spatial/MarginContainer/PuzzleLayer/PuzzleScreen/wohnzimmer_desk"

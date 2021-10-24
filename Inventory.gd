@@ -4,6 +4,13 @@ export var maxSlots=6
 
 var items = [0,0,0,0,0,0]
 
+var itemDict = [
+	null,
+	preload("res://assets/gewinde_ding.png"),
+	preload("res://assets/knauf.png"),
+	preload("res://assets/key.png")
+]
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,6 +21,30 @@ var items = [0,0,0,0,0,0]
 func _ready():
 	pass # Replace with function body.
 
+func contains(item):
+	return items.find(item) != -1
+
+func add(item):
+	var empty = items.find(item)
+	if empty == -1:
+		return false
+	items[empty] = item
+	rerender()
+	return true
+
+func remove(item):
+	var index = items.find(item)
+	if index != -1:
+		items[index] = 0
+		rerender()
+		return true
+	else:
+		return false
+
+func rerender():
+	for i in range(maxSlots):
+		var item = self.get_child(i).get_child(0)
+		item.texture = itemDict[items[i]]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
